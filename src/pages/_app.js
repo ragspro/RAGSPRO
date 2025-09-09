@@ -1,7 +1,7 @@
-import '../src/styles/globals.css'
+import '../styles/globals.css'
 import { useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
-import Layout from '../src/components/Layout'
+import Layout from '../components/Layout'
 
 export default function App({ Component, pageProps, router }) {
   useEffect(() => {

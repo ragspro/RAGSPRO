@@ -6,13 +6,10 @@ import Link from 'next/link'
 import SimpleBlackHole from './SimpleBlackHole'
 import SplineModel from './SplineModel'
 
-
 export default function HeroSection() {
   const [isMobile, setIsMobile] = useState(false)
-  const [mounted, setMounted] = useState(false)
   
   useEffect(() => {
-    setMounted(true)
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
@@ -22,27 +19,6 @@ export default function HeroSection() {
     
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
-  
-  if (!mounted) {
-    return (
-      <section className="relative h-screen flex items-center overflow-hidden bg-black">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center relative">
-          <div className="w-full md:w-1/2 text-left mb-12 md:mb-0">
-            <div className="animate-pulse">
-              <div className="h-16 bg-gray-800 rounded mb-6"></div>
-              <div className="h-8 bg-gray-800 rounded mb-6"></div>
-              <div className="h-20 bg-gray-800 rounded mb-8"></div>
-              <div className="flex gap-4">
-                <div className="h-12 w-32 bg-gray-800 rounded-full"></div>
-                <div className="h-12 w-32 bg-gray-800 rounded-full"></div>
-              </div>
-            </div>
-          </div>
-          <div className="w-full md:w-1/2 h-[400px] md:h-[600px] bg-gray-800 rounded"></div>
-        </div>
-      </section>
-    )
-  }
   
   return (
     <section className="relative h-screen flex items-center overflow-hidden bg-black">
