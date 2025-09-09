@@ -1,9 +1,6 @@
-import { useState, useEffect, Suspense } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Stars, PerspectiveCamera } from '@react-three/drei'
 import Link from 'next/link'
-import SimpleBlackHole from './SimpleBlackHole'
 import SplineModel from './SplineModel'
 
 export default function HeroSection() {
