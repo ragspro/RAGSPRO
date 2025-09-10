@@ -14,16 +14,16 @@ export default function Footer() {
               Premium web development, AI solutions, and digital products.
             </p>
             <div className="flex space-x-4">
-              <a href="https://github.com/raghavshah" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://github.com/ragspro/raghav-portfolio" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <FiGithub size={20} />
               </a>
-              <a href="https://linkedin.com/in/raghavshah" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/in/bhupederpratap/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <FiLinkedin size={20} />
               </a>
               <a href="https://twitter.com/ragspro" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <FiTwitter size={20} />
               </a>
-              <a href="https://instagram.com/ragspro" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.instagram.com/ragsproai/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <FiInstagram size={20} />
               </a>
             </div>

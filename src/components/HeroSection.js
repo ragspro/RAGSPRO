@@ -18,40 +18,40 @@ export default function HeroSection() {
   }, [])
   
   return (
-    <section className="relative h-screen flex items-center overflow-hidden bg-black">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black hero-section">
       
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center relative">
-        <div className="w-full md:w-1/2 text-left mb-12 md:mb-0">
+      <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center relative">
+        <div className="w-full md:w-1/2 text-left mb-8 md:mb-0">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="text-white">Hi, I'm </span>
-              <span className="text-gradient">Raghav Shah</span>
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 leading-tight">
+              <span className="text-white block xs:inline">Hi, I'm </span>
+              <span className="text-gradient block xs:inline">Raghav Shah</span>
             </h1>
             
-            <h2 className="text-2xl md:text-3xl font-medium text-gray-300 mb-6">
+            <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-medium text-gray-300 mb-4 md:mb-6 leading-relaxed">
               Full-Stack Developer & Founder of RAGSPRO
             </h2>
             
-            <p className="text-gray-400 text-lg mb-8 max-w-lg">
+            <p className="text-gray-400 text-base sm:text-lg mb-6 md:mb-8 max-w-lg leading-relaxed">
               Creating premium web experiences, AI-powered tools, and digital products
               that help businesses stand out in the digital landscape.
             </p>
             
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col xs:flex-row gap-3 xs:gap-4">
               <button 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3 bg-accent hover:bg-opacity-80 text-white font-medium rounded-full transition-all neon-border"
+                className="px-6 xs:px-8 py-3 bg-accent hover:bg-opacity-80 text-white font-medium rounded-full transition-all neon-border text-sm xs:text-base"
               >
                 Hire Me
               </button>
               
               <button 
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3 bg-transparent border border-accent text-white font-medium rounded-full hover:bg-accent hover:bg-opacity-10 transition-all"
+                className="px-6 xs:px-8 py-3 bg-transparent border border-accent text-white font-medium rounded-full hover:bg-accent hover:bg-opacity-10 transition-all text-sm xs:text-base"
               >
                 View Projects
               </button>
@@ -59,7 +59,7 @@ export default function HeroSection() {
           </motion.div>
         </div>
         
-        <div className="w-full md:w-1/2 h-[400px] md:h-[600px] relative">
+        <div className="w-full md:w-1/2 h-[300px] xs:h-[350px] sm:h-[400px] md:h-[600px] relative three-canvas">
           <SplineModel />
         </div>
       </div>

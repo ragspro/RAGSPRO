@@ -42,10 +42,10 @@ export default function Navbar() {
   ]
   
   return (
-    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-      scrolled ? 'py-3 glass-card bg-opacity-80' : 'py-5 bg-transparent'
+    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 safe-area-top ${
+      scrolled ? 'py-2 sm:py-3 glass-card bg-opacity-80' : 'py-3 sm:py-5 bg-transparent'
     }`}>
-      <div className="container mx-auto px-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
         <Link href="/" className="flex items-center">
           <motion.span 
             initial={{ opacity: 0 }}
@@ -78,7 +78,7 @@ export default function Navbar() {
         </div>
         
         <button 
-          className="md:hidden text-white"
+          className="md:hidden text-white p-2 -mr-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -92,14 +92,14 @@ export default function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden glass-card mt-2 py-4 px-4"
+          className="md:hidden glass-card mt-2 py-4 px-4 mx-4 rounded-lg"
         >
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <button 
                 key={link.name}
                 onClick={() => { link.action(); setIsOpen(false); }}
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors w-full text-left"
+                className="text-base font-medium text-gray-300 hover:text-white transition-colors w-full text-left py-2 px-2 rounded hover:bg-white hover:bg-opacity-10 min-h-[44px] flex items-center"
               >
                 {link.name}
               </button>
@@ -107,9 +107,9 @@ export default function Navbar() {
             
             <button 
               onClick={toggleLanguage}
-              className="flex items-center text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              className="flex items-center text-base font-medium text-gray-300 hover:text-white transition-colors py-2 px-2 rounded hover:bg-white hover:bg-opacity-10 min-h-[44px]"
             >
-              <FiGlobe className="mr-1" />
+              <FiGlobe className="mr-2" />
               {language === 'EN' ? 'English' : 'हिंदी'}
             </button>
           </div>
