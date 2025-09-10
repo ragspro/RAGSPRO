@@ -13,62 +13,43 @@ export default function AboutSection() {
   return (
     <section id="about" className="section-padding bg-primary">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-12">
+        <div className="max-w-4xl mx-auto">
           <motion.div 
-            className="w-full md:w-1/2 reveal"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="w-full reveal"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative">
-              {/* Placeholder for profile image - replace with actual image */}
-              <div className="w-full h-[400px] bg-secondary rounded-2xl overflow-hidden relative">
-                <div className="absolute inset-0 flex items-center justify-center text-gray-600">
-                  Profile Image Placeholder
-                </div>
-              </div>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                About <span className="text-gradient">Me</span>
+              </h2>
+              
+              <p className="text-gray-300 mb-6 max-w-3xl mx-auto text-lg">
+                Delhi-based Full Stack Developer with a Bachelor's in Computer Applications (BCA), 
+                passionate about creating sleek web apps, stunning portfolios, and automating with AI tools.
+              </p>
+              
+              <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+                As the founder of RAGSPRO, I combine technical expertise with creative vision to deliver 
+                premium digital solutions that help businesses and individuals establish a strong online presence.
+              </p>
               
               {/* Experience badge */}
-              <div className="absolute -right-5 -bottom-5 glass-card p-4 rounded-xl">
-                <p className="text-sm text-gray-300">Experience</p>
+              <div className="inline-flex glass-card p-4 rounded-xl">
+                <p className="text-sm text-gray-300 mr-4">Experience</p>
                 <p className="text-2xl font-bold text-gradient">3+ Years</p>
               </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -left-4 -top-4 w-24 h-24 border-t-2 border-l-2 border-accent opacity-50" />
-              <div className="absolute -right-4 -bottom-4 w-24 h-24 border-b-2 border-r-2 border-neon opacity-50" />
             </div>
-          </motion.div>
-          
-          <motion.div 
-            className="w-full md:w-1/2 reveal"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              About <span className="text-gradient">Me</span>
-            </h2>
             
-            <p className="text-gray-300 mb-6">
-              Delhi-based Full Stack Developer with a Bachelor's in Computer Applications (BCA), 
-              passionate about creating sleek web apps, stunning portfolios, and automating with AI tools.
-            </p>
-            
-            <p className="text-gray-400 mb-8">
-              As the founder of RAGSPRO, I combine technical expertise with creative vision to deliver 
-              premium digital solutions that help businesses and individuals establish a strong online presence.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {skills.map((skill, index) => (
-                <div key={index} className="glass-card p-4 rounded-xl">
-                  <div className="flex items-center mb-3">
+                <div key={index} className="glass-card p-6 rounded-xl text-center">
+                  <div className="flex justify-center mb-4">
                     {skill.icon}
-                    <h3 className="ml-3 font-semibold text-white">{skill.name}</h3>
                   </div>
+                  <h3 className="font-semibold text-white mb-3">{skill.name}</h3>
                   <p className="text-sm text-gray-400">{skill.description}</p>
                 </div>
               ))}
