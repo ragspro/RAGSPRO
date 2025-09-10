@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import { useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import Layout from '../components/Layout'
+import MobilePerformanceOptimizer from '../components/MobilePerformanceOptimizer'
 
 export default function App({ Component, pageProps, router }) {
   useEffect(() => {
@@ -28,6 +29,7 @@ export default function App({ Component, pageProps, router }) {
 
   return (
     <AnimatePresence mode="wait">
+      <MobilePerformanceOptimizer />
       <Layout>
         <Component {...pageProps} key={router.route} />
       </Layout>

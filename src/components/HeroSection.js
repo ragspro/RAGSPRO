@@ -20,12 +20,13 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-black hero-section">
       
-      <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center relative">
-        <div className="w-full md:w-1/2 text-left mb-8 md:mb-0">
+      <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center relative w-full">
+        <div className="w-full md:w-1/2 text-left mb-6 md:mb-0 hero-content">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="space-y-4 md:space-y-6"
           >
             <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 leading-tight">
               <span className="text-white block xs:inline">Hi, I'm </span>

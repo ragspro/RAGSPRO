@@ -129,38 +129,73 @@ button, .btn {
   }
 }
 
+/* Safari iOS fixes */
+@supports (-webkit-touch-callout: none) {
+  .hero-section {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    padding-top: calc(env(safe-area-inset-top) + 4rem);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 2rem);
+  }
+  
+  .loader-container {
+    height: 100vh;
+    height: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 /* iPhone specific optimizations */
 @media (max-width: 480px) {
   .hero-section {
     min-height: 100vh;
-    padding: 1rem;
+    padding: 4rem 1rem 2rem;
+    display: flex;
+    align-items: center;
   }
   
   .three-canvas {
-    height: 40vh;
+    height: 35vh;
+    max-height: 300px;
   }
   
-  /* Fix text overflow on mobile */
+  /* Fix text positioning */
+  .hero-content {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
   h1 {
-    font-size: 1.8rem !important;
+    font-size: 1.75rem !important;
     line-height: 1.2 !important;
     word-break: break-word;
+    margin-bottom: 1rem !important;
   }
   
   h2 {
-    font-size: 1.2rem !important;
-    line-height: 1.3 !important;
+    font-size: 1.1rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 1rem !important;
   }
   
-  /* Center loader on mobile */
+  /* Center loader perfectly */
   .loader-container {
-    padding: 2rem 1rem;
-    text-align: center;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .loader-title {
     font-size: 2rem !important;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 }
 

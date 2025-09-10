@@ -14,12 +14,34 @@
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Mobile performance optimizations */
+@media (max-width: 768px) {
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.2s !important;
+  }
+  
+  .framer-motion-div {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+}
+
 /* Reduce motion for performance */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Safari performance fixes */
+@supports (-webkit-appearance: none) {
+  .gpu-accelerated {
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000px;
   }
 }
 
