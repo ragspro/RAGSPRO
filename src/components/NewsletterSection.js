@@ -7,24 +7,37 @@ export default function NewsletterSection() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     
     if (!email) return
     
     setIsLoading(true)
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false)
-      setIsSubmitted(true)
-      setEmail('')
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      })
       
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false)
-      }, 5000)
-    }, 1500)
+      if (response.ok) {
+        setIsSubmitted(true)
+        setEmail('')
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false)
+        }, 5000)
+      } else {
+        throw new Error('Subscription failed')
+      }
+    } catch (error) {
+      console.error('Newsletter signup error:', error)
+      alert('Subscription failed. Please try again.')
+    } finally {
+      setIsLoading(false)
+    }
   }
   
   return (

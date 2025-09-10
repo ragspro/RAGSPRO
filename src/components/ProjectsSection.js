@@ -23,7 +23,7 @@ export default function ProjectsSection() {
       description: 'AI-powered legal assistant platform providing intelligent legal document analysis and consultation services.',
       technologies: ['Next.js', 'OpenAI API', 'TailwindCSS', 'Node.js'],
       liveLink: 'https://lawai.ragspro.com',
-      githubLink: 'https://github.com'
+      githubLink: 'https://github.com/ragspro/lawai-legal-assistant'
     },
     {
       id: 2,
@@ -32,8 +32,8 @@ export default function ProjectsSection() {
       image: '/images/projects/maid.jpg',
       description: 'Professional maid service booking platform with online scheduling and service management.',
       technologies: ['Next.js', 'React', 'TailwindCSS', 'Stripe API'],
-      liveLink: 'https://example.com',
-      githubLink: 'https://github.com'
+      liveLink: 'https://maidagency.ragspro.com',
+      githubLink: 'https://github.com/ragspro/maid-agency-website'
     },
     {
       id: 3,
@@ -42,8 +42,8 @@ export default function ProjectsSection() {
       image: '/images/projects/shoes.jpg',
       description: 'Modern online shoe store with advanced filtering, cart functionality and secure payment integration.',
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
-      liveLink: 'https://example.com',
-      githubLink: 'https://github.com'
+      liveLink: 'https://shoesstore.ragspro.com',
+      githubLink: 'https://github.com/ragspro/ecommerce-shoes-store'
     },
     {
       id: 4,
@@ -52,8 +52,8 @@ export default function ProjectsSection() {
       image: '/images/projects/himshakti.jpg',
       description: 'Complete e-commerce solution for Himshakti brand with product catalog, shopping cart and order management.',
       technologies: ['Next.js', 'React', 'TailwindCSS', 'PayPal API'],
-      liveLink: 'https://example.com',
-      githubLink: 'https://github.com'
+      liveLink: 'https://himshakti.ragspro.com',
+      githubLink: 'https://github.com/ragspro/himshakti-ecommerce'
     }
   ]
   

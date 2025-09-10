@@ -42,6 +42,46 @@ export default function Document() {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="renderer" content="webkit" />
         <meta name="force-rendering" content="webkit" />
+        
+        {/* SEO Optimization */}
+        <link rel="canonical" href="https://ragspro.in" />
+        
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Raghav Shah",
+              "jobTitle": "Full Stack Developer",
+              "description": "Delhi-based Full Stack Developer offering premium web development, AI tools, and digital products",
+              "url": "https://ragspro.in",
+              "email": "ragsproai@gmail.com",
+              "telephone": "+91-8700048490",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Delhi",
+                "addressCountry": "IN"
+              },
+              "sameAs": [
+                "https://github.com/ragspro",
+                "https://www.linkedin.com/in/bhupederpratap/",
+                "https://twitter.com/ragspro",
+                "https://www.instagram.com/ragsproai/"
+              ],
+              "knowsAbout": [
+                "Web Development",
+                "AI Integration",
+                "UI/UX Design",
+                "SEO Optimization",
+                "Next.js",
+                "React",
+                "Three.js"
+              ]
+            })
+          }}
+        />
       </Head>
       <body>
         <Main />
