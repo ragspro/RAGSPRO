@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Performance optimization utilities
 export const optimizeForDevice = () => {
   if (typeof window === 'undefined') return;
