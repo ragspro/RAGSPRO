@@ -32,8 +32,8 @@ export default function ProjectsSection() {
       image: '/images/projects/maid.jpg',
       description: 'Professional maid service booking platform with online scheduling and service management.',
       technologies: ['Next.js', 'React', 'TailwindCSS', 'Stripe API'],
-      liveLink: 'https://maidagency.ragspro.com',
-      githubLink: 'https://github.com/ragspro/maid-agency-website'
+      liveLink: 'https://maid-agency.vercel.app',
+      githubLink: 'https://github.com/ragspro/maid-agency'
     },
     {
       id: 3,
@@ -42,8 +42,8 @@ export default function ProjectsSection() {
       image: '/images/projects/shoes.jpg',
       description: 'Modern online shoe store with advanced filtering, cart functionality and secure payment integration.',
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
-      liveLink: 'https://shoesstore.ragspro.com',
-      githubLink: 'https://github.com/ragspro/ecommerce-shoes-store'
+      liveLink: 'https://elito-premium-shoes.vercel.app',
+      githubLink: 'https://github.com/ragspro/Elito-premium-shoes-'
     },
     {
       id: 4,
