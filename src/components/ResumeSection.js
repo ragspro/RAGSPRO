@@ -137,8 +137,7 @@ export default function ResumeSection() {
         </div>
         
         <div className="max-w-4xl mx-auto">
-          {/* Education Tab */}
-          {activeTab === 'education' && (
+          <div style={{ display: activeTab === 'education' ? 'block' : 'none' }}>
             <div className="space-y-8">
               {education.map((item) => (
                 <div key={item.id} className="glass-card p-6 rounded-2xl reveal">
@@ -164,10 +163,9 @@ export default function ResumeSection() {
                 </div>
               </div>
             </div>
-          )}
+          </div>
           
-          {/* Experience Tab */}
-          {activeTab === 'experience' && (
+          <div style={{ display: activeTab === 'experience' ? 'block' : 'none' }}>
             <div className="space-y-8">
               {experience.map((item) => (
                 <div key={item.id} className="glass-card p-6 rounded-2xl reveal">
@@ -194,10 +192,9 @@ export default function ResumeSection() {
                 </div>
               ))}
             </div>
-          )}
+          </div>
           
-          {/* Skills Tab */}
-          {activeTab === 'skills' && (
+          <div style={{ display: activeTab === 'skills' ? 'block' : 'none' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {skills.map((skillGroup, index) => (
                 <div key={index} className="glass-card p-6 rounded-2xl reveal">
@@ -215,7 +212,7 @@ export default function ResumeSection() {
                 </div>
               ))}
             </div>
-          )}
+          </div>
         </div>
       </div>
     </section>

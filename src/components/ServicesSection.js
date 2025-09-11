@@ -50,7 +50,7 @@ export default function ServicesSection() {
   ]
   
   return (
-    <section id="services" className="section-padding bg-secondary">
+    <section id="services" className="section-padding bg-primary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 reveal">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -63,44 +63,53 @@ export default function ServicesSection() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <div
-              key={service.id}
-              className={`glass-card p-6 rounded-2xl cursor-pointer transition-all duration-300 reveal hover:-translate-y-2 ${
-                activeService === service.id ? 'neon-border' : ''
-              }`}
-              onClick={() => setActiveService(activeService === service.id ? null : service.id)}
-            >
+            <div key={service.id} className="glass-card p-6 rounded-2xl reveal">
               <div className="flex justify-between items-start mb-4">
                 <div className="p-3 bg-accent bg-opacity-10 rounded-xl text-accent">
                   {service.icon}
                 </div>
-                <div className={`transition-transform duration-300 ${
-                  activeService === service.id ? 'rotate-180' : ''
-                }`}>
+                <button 
+                  onClick={() => setActiveService(activeService === service.id ? null : service.id)}
+                  className={`transition-transform duration-300 ${
+                    activeService === service.id ? 'rotate-180' : ''
+                  }`}
+                >
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 9L12 16L5 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </div>
+                </button>
               </div>
               
               <h3 className="text-xl font-semibold mb-3 text-white">{service.title}</h3>
               <p className="text-gray-400 mb-4">{service.description}</p>
               
-              {activeService === service.id && (
-                <div className="mt-4">
-                  <ul className="space-y-2">
-                    {service.features.map((feature, index) => (
-                      <li key={index} className="flex items-center text-sm text-gray-300">
-                        <span className="w-1.5 h-1.5 bg-accent rounded-full mr-2"></span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              <div style={{ display: activeService === service.id ? 'block' : 'none' }}>
+                <ul className="mt-4 space-y-2">
+                  {service.features.map((feature, index) => (
+                    <li key={index} className="flex items-center text-sm text-gray-300">
+                      <span className="w-1.5 h-1.5 bg-accent rounded-full mr-2"></span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
+        
+        {/* All service features rendered separately like Resume tabs */}
+        {services.map((service) => (
+          <div key={`features-${service.id}`} style={{ display: 'none' }}>
+            <ul className="mt-4 space-y-2">
+              {service.features.map((feature, index) => (
+                <li key={index} className="flex items-center text-sm text-gray-300">
+                  <span className="w-1.5 h-1.5 bg-accent rounded-full mr-2"></span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   )
