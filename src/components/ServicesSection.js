@@ -89,13 +89,15 @@ export default function ServicesSection() {
               <h3 className="text-xl font-semibold mb-3 text-white">{service.title}</h3>
               <p className="text-gray-400 mb-4">{service.description}</p>
               
-              <AnimatePresence>
+              <AnimatePresence mode="wait">
                 {activeService === service.id && (
                   <motion.div
+                    key={`service-${service.id}`}
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
                   >
                     <ul className="mt-4 space-y-2">
                       {service.features.map((feature, index) => (
