@@ -19,10 +19,10 @@ export default function Home() {
       
       <HeroSection />
       <AboutSection />
-      <ServicesSection />
       <ProjectsSection />
-      <RequestProjectSection />
       <ResumeSection />
+      <ServicesSection />
+      <RequestProjectSection />
       <ContactSection />
     </>
   )

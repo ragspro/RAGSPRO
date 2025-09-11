@@ -34,10 +34,11 @@ export default function Navbar() {
   
   const navLinks = [
     { name: 'Home', action: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
-    { name: 'Services', action: () => scrollToSection('services') },
+    { name: 'About', action: () => scrollToSection('about') },
     { name: 'Projects', action: () => scrollToSection('projects') },
-    { name: 'Products', action: () => scrollToSection('products') },
     { name: 'Resume', action: () => scrollToSection('resume') },
+    { name: 'Services', action: () => scrollToSection('services') },
+    { name: 'Request Project', action: () => scrollToSection('request-project') },
     { name: 'Contact', action: () => scrollToSection('contact') },
   ]
   

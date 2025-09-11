@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
 import { FiMonitor, FiLayout, FiCpu, FiTrendingUp, FiPenTool, FiCode } from 'react-icons/fi'
 
 export default function ServicesSection() {
@@ -64,26 +63,24 @@ export default function ServicesSection() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <motion.div
+            <div
               key={service.id}
-              className={`glass-card p-6 rounded-2xl cursor-pointer transition-all duration-300 reveal ${
+              className={`glass-card p-6 rounded-2xl cursor-pointer transition-all duration-300 reveal hover:-translate-y-2 ${
                 activeService === service.id ? 'neon-border' : ''
               }`}
-              whileHover={{ y: -10 }}
               onClick={() => setActiveService(activeService === service.id ? null : service.id)}
             >
               <div className="flex justify-between items-start mb-4">
                 <div className="p-3 bg-accent bg-opacity-10 rounded-xl text-accent">
                   {service.icon}
                 </div>
-                <motion.div
-                  animate={{ rotate: activeService === service.id ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                >
+                <div className={`transition-transform duration-300 ${
+                  activeService === service.id ? 'rotate-180' : ''
+                }`}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 9L12 16L5 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </motion.div>
+                </div>
               </div>
               
               <h3 className="text-xl font-semibold mb-3 text-white">{service.title}</h3>
@@ -101,7 +98,7 @@ export default function ServicesSection() {
                   </ul>
                 </div>
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
