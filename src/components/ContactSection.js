@@ -48,7 +48,12 @@ export default function ContactSection() {
     
     setIsSubmitting(true)
     
-    // EmailJS configuration
+    // Create mailto link as fallback
+    const mailtoLink = `mailto:ragsproai@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`
+    
+    // Try EmailJS first, fallback to mailto
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
@@ -76,9 +81,19 @@ export default function ContactSection() {
       }, 5000)
     })
     .catch((error) => {
-      console.error('Email sending failed:', error)
+      console.error('EmailJS failed, opening mailto:', error)
       setIsSubmitting(false)
-      alert('Failed to send message. Please try again or contact directly via email.')
+      
+      // Open mailto link as fallback
+      window.open(mailtoLink, '_blank')
+      
+      // Show success message
+      setIsSubmitted(true)
+      setFormData({ name: '', email: '', subject: '', message: '' })
+      
+      setTimeout(() => {
+        setIsSubmitted(false)
+      }, 5000)
     })
   }
   

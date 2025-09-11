@@ -8,10 +8,15 @@
 // 6. Replace the values below with your actual EmailJS credentials
 
 export const EMAILJS_CONFIG = {
-  SERVICE_ID: 'service_8x9y2zk', // Real EmailJS service ID
-  TEMPLATE_ID: 'template_contact_form', // Real EmailJS template ID
-  PUBLIC_KEY: 'user_abc123xyz' // Real EmailJS public key
+  SERVICE_ID: 'service_r59qw19',
+  TEMPLATE_ID: 'template_izrtybw',
+  PUBLIC_KEY: '7ii91USz763MTy_ch'
 }
+
+// Example:
+// SERVICE_ID: 'service_abc123'
+// TEMPLATE_ID: 'template_xyz789' 
+// PUBLIC_KEY: 'user_def456'
 
 // Email template should include these variables:
 // {{from_name}} - Sender's name

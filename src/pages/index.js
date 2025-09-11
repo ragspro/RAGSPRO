@@ -4,10 +4,11 @@ import HeroSection from '../components/HeroSection'
 import AboutSection from '../components/AboutSection'
 import ServicesSection from '../components/ServicesSection'
 import ProjectsSection from '../components/ProjectsSection'
-import ProductsSection from '../components/ProductsSection'
+
 import ResumeSection from '../components/ResumeSection'
 import ContactSection from '../components/ContactSection'
-import NewsletterSection from '../components/NewsletterSection'
+import RequestProjectSection from '../components/RequestProjectSection'
+
 
 export default function Home() {
   return (
@@ -20,9 +21,8 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <ProjectsSection />
-      <ProductsSection />
+      <RequestProjectSection />
       <ResumeSection />
-      <NewsletterSection />
       <ContactSection />
     </>
   )

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { FiDownload, FiBookOpen, FiBriefcase, FiAward } from 'react-icons/fi'
 
 export default function ResumeSection() {
@@ -138,15 +138,17 @@ export default function ResumeSection() {
         </div>
         
         <div className="max-w-4xl mx-auto">
-          {/* Education Tab */}
-          {activeTab === 'education' && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="space-y-8"
-            >
+          <AnimatePresence mode="wait">
+            {/* Education Tab */}
+            {activeTab === 'education' && (
+              <motion.div
+                key="education"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="space-y-8"
+              >
               {education.map((item) => (
                 <div key={item.id} className="glass-card p-6 rounded-2xl reveal">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
@@ -170,18 +172,19 @@ export default function ResumeSection() {
                   ))}
                 </div>
               </div>
-            </motion.div>
-          )}
-          
-          {/* Experience Tab */}
-          {activeTab === 'experience' && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="space-y-8"
-            >
+              </motion.div>
+            )}
+            
+            {/* Experience Tab */}
+            {activeTab === 'experience' && (
+              <motion.div
+                key="experience"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="space-y-8"
+              >
               {experience.map((item) => (
                 <div key={item.id} className="glass-card p-6 rounded-2xl reveal">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
@@ -206,18 +209,19 @@ export default function ResumeSection() {
                   )}
                 </div>
               ))}
-            </motion.div>
-          )}
-          
-          {/* Skills Tab */}
-          {activeTab === 'skills' && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8"
-            >
+              </motion.div>
+            )}
+            
+            {/* Skills Tab */}
+            {activeTab === 'skills' && (
+              <motion.div
+                key="skills"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              >
               {skills.map((skillGroup, index) => (
                 <div key={index} className="glass-card p-6 rounded-2xl reveal">
                   <h3 className="text-xl font-semibold text-white mb-4">{skillGroup.category}</h3>
@@ -233,8 +237,9 @@ export default function ResumeSection() {
                   </div>
                 </div>
               ))}
-            </motion.div>
-          )}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </section>
