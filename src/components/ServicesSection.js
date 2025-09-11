@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { FiMonitor, FiLayout, FiCpu, FiTrendingUp, FiPenTool, FiCode } from 'react-icons/fi'
 
 export default function ServicesSection() {
@@ -89,27 +89,18 @@ export default function ServicesSection() {
               <h3 className="text-xl font-semibold mb-3 text-white">{service.title}</h3>
               <p className="text-gray-400 mb-4">{service.description}</p>
               
-              <AnimatePresence mode="wait">
-                {activeService === service.id && (
-                  <motion.div
-                    key={`service-${service.id}`}
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <ul className="mt-4 space-y-2">
-                      {service.features.map((feature, index) => (
-                        <li key={index} className="flex items-center text-sm text-gray-300">
-                          <span className="w-1.5 h-1.5 bg-accent rounded-full mr-2"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {activeService === service.id && (
+                <div className="mt-4">
+                  <ul className="space-y-2">
+                    {service.features.map((feature, index) => (
+                      <li key={index} className="flex items-center text-sm text-gray-300">
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full mr-2"></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
