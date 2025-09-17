@@ -1,13 +1,20 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { FiCode, FiLayers, FiCpu, FiTrendingUp } from 'react-icons/fi'
+import { FiCode, FiLayers, FiCpu, FiTrendingUp, FiUsers, FiStar, FiZap, FiTrophy } from 'react-icons/fi'
 
 export default function AboutSection() {
-  const skills = [
-    { name: 'Web Development', icon: <FiCode size={24} className="text-accent" />, description: 'Creating responsive, modern web applications with React, Next.js, and more.' },
-    { name: 'UI/UX Design', icon: <FiLayers size={24} className="text-accent" />, description: 'Designing intuitive user interfaces with a focus on user experience and accessibility.' },
-    { name: 'AI Integration', icon: <FiCpu size={24} className="text-accent" />, description: 'Implementing AI-powered features and tools to enhance digital products.' },
-    { name: 'SEO Optimization', icon: <FiTrendingUp size={24} className="text-accent" />, description: 'Optimizing websites for search engines to increase visibility and traffic.' },
+  const achievements = [
+    { name: '₹2L+ Revenue Generated', icon: <FiTrendingUp size={24} className="text-accent" />, description: 'Total revenue generated for clients across all projects' },
+    { name: '500+ Users', icon: <FiUsers size={24} className="text-accent" />, description: 'Active users across our AI products and platforms' },
+    { name: '95% Client Satisfaction', icon: <FiStar size={24} className="text-accent" />, description: 'Consistently high ratings from satisfied clients' },
+    { name: '60-Day Delivery', icon: <FiZap size={24} className="text-accent" />, description: 'Average project delivery time from concept to launch' },
+  ]
+  
+  const expertise = [
+    'AI Product Development (3+ products launched)',
+    'Business Process Automation (50+ workflows optimized)',
+    'Custom AI Assistant Development',
+    'Revenue-Generating Digital Solutions'
   ]
   
   return (
@@ -23,36 +30,59 @@ export default function AboutSection() {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                About <span className="text-gradient">Me</span>
+                The RAGSPRO <span className="text-gradient">Story</span>
               </h2>
               
               <p className="text-gray-300 mb-6 max-w-3xl mx-auto text-lg">
-                Delhi-based Full Stack Developer with a Bachelor's in Computer Applications (BCA), 
-                passionate about creating sleek web apps, stunning portfolios, and automating with AI tools.
+                RAGSPRO was founded with one mission: turn innovative ideas into profitable AI businesses.
               </p>
               
-              <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-                As the founder of RAGSPRO, I combine technical expertise with creative vision to deliver 
-                premium digital solutions that help businesses and individuals establish a strong online presence.
+              <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+                Led by Raghav Shah, a 22-year-old software engineer from Delhi, our team specializes in building AI products that actually generate revenue. We've successfully launched 3 profitable AI products and helped numerous businesses automate their processes.
               </p>
               
-              {/* Experience badge */}
-              <div className="inline-flex glass-card p-4 rounded-xl">
-                <p className="text-sm text-gray-300 mr-4">Experience</p>
-                <p className="text-2xl font-bold text-gradient">3+ Years</p>
+              <div className="mb-8">
+                <h3 className="text-xl font-semibold text-white mb-4">Our Expertise:</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl mx-auto">
+                  {expertise.map((item, index) => (
+                    <div key={index} className="flex items-center text-gray-300">
+                      <span className="w-2 h-2 bg-accent rounded-full mr-3"></span>
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="glass-card p-6 rounded-xl mb-8 max-w-2xl mx-auto">
+                <h3 className="text-lg font-semibold text-white mb-4">Why Choose RAGSPRO?</h3>
+                <p className="text-gray-300 mb-4">
+                  We don't just build products - we build profitable businesses. Every project is designed with revenue generation and scalability in mind.
+                </p>
+                <p className="text-accent font-medium">
+                  Our Promise: If your AI product doesn't generate ₹50K+ revenue in 6 months, we'll refund 50% of your investment.
+                </p>
               </div>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {skills.map((skill, index) => (
+              {achievements.map((achievement, index) => (
                 <div key={index} className="glass-card p-6 rounded-xl text-center">
                   <div className="flex justify-center mb-4">
-                    {skill.icon}
+                    {achievement.icon}
                   </div>
-                  <h3 className="font-semibold text-white mb-3">{skill.name}</h3>
-                  <p className="text-sm text-gray-400">{skill.description}</p>
+                  <h3 className="font-semibold text-white mb-3">{achievement.name}</h3>
+                  <p className="text-sm text-gray-400">{achievement.description}</p>
                 </div>
               ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-8 py-3 bg-accent hover:bg-opacity-80 text-white font-medium rounded-full transition-all"
+              >
+                Book Free Consultation
+              </button>
             </div>
           </motion.div>
         </div>

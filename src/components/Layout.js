@@ -5,30 +5,15 @@ import Footer from './Footer'
 import Loader from './Loader'
 
 export default function Layout({ children }) {
-  const [loading, setLoading] = useState(true)
-  
-  useEffect(() => {
-    // Simulate loading time
-    setTimeout(() => {
-      setLoading(false)
-    }, 2000)
-  }, [])
-  
   return (
     <>
       <Head>
-        <title>RAGSPRO - Code. Create. Dominate.</title>
+        <title>RAGSPRO - AI Product Development Agency & Digital Solutions Partner</title>
       </Head>
       
-      {loading ? (
-        <Loader />
-      ) : (
-        <>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </>
-      )}
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
     </>
   )
 }

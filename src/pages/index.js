@@ -1,11 +1,9 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
 import HeroSection from '../components/HeroSection'
-import AboutSection from '../components/AboutSection'
 import ServicesSection from '../components/ServicesSection'
 import ProjectsSection from '../components/ProjectsSection'
-
-import ResumeSection from '../components/ResumeSection'
+import PricingSection from '../components/PricingSection'
 import ContactSection from '../components/ContactSection'
 import RequestProjectSection from '../components/RequestProjectSection'
 
@@ -14,15 +12,14 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>RAGSPRO - Code. Create. Dominate.</title>
+        <title>RAGSPRO - AI Product Development Agency & Digital Solutions Partner</title>
       </Head>
       
       <HeroSection />
-      <AboutSection />
-      <ResumeSection />
-      <ProjectsSection />
       <ServicesSection />
+      <ProjectsSection />
       <RequestProjectSection />
+      <PricingSection />
       <ContactSection />
     </>
   )

@@ -150,15 +150,14 @@ export default function ProjectsSection() {
         </div>
         
         <div className="text-center mt-12 reveal">
-          <button 
-            onClick={() => alert('All projects page coming soon!')}
-            className="px-8 py-3 bg-transparent border border-accent text-white font-medium rounded-full hover:bg-accent hover:bg-opacity-10 transition-all inline-flex items-center"
-          >
-            View All Projects
-            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </button>
+          <Link href="/projects">
+            <button className="px-8 py-3 bg-transparent border border-accent text-white font-medium rounded-full hover:bg-accent hover:bg-opacity-10 transition-all inline-flex items-center">
+              View All Projects
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </Link>
         </div>
       </div>
     </section>

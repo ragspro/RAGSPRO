@@ -18,68 +18,55 @@ export default function HeroSection() {
   }, [])
   
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black hero-section">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black hero-section pt-16 xs:pt-20 md:pt-0">
       
-      <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center relative w-full">
-        <div className="w-full md:w-1/2 text-left mb-6 md:mb-0 hero-content">
+      <div className="container mx-auto px-3 xs:px-4 sm:px-6 flex flex-col md:flex-row items-center relative w-full">
+        <div className="w-full md:w-1/2 text-left mb-4 xs:mb-6 md:mb-0 hero-content">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="space-y-4 md:space-y-6"
           >
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 leading-tight">
-              <span className="text-white block xs:inline">Hi, I'm </span>
-              <span className="text-gradient block xs:inline">Raghav Shah</span>
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-3 md:mb-6 leading-tight">
+              <span className="text-white block">Welcome to</span>
+              <span className="text-gradient block">RAGSPRO</span>
             </h1>
             
-            <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-medium text-gray-300 mb-4 md:mb-6 leading-relaxed">
-              Full-Stack Developer & Founder of RAGSPRO
+            <h2 className="text-sm xs:text-base sm:text-lg md:text-2xl lg:text-3xl font-medium text-gray-300 mb-3 md:mb-6 leading-relaxed">
+              AI Product Development Agency & Digital Solutions Partner
             </h2>
             
-            <p className="text-gray-400 text-base sm:text-lg mb-6 md:mb-8 max-w-lg leading-relaxed">
-              Creating premium web experiences, AI-powered tools, and digital products
-              that help businesses stand out in the digital landscape.
+            <p className="text-gray-400 text-sm sm:text-base md:text-lg mb-4 md:mb-8 max-w-lg leading-relaxed">
+              We build profitable AI products and automation solutions that help businesses generate ₹50K+ monthly recurring revenue. From concept to launch in 15-30 days.
             </p>
             
-            <div className="flex flex-col xs:flex-row gap-3 xs:gap-4">
+            <div className="flex flex-col xs:flex-row gap-2 xs:gap-3">
               <button 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-6 xs:px-8 py-3 bg-accent hover:bg-opacity-80 text-white font-medium rounded-full transition-all neon-border text-sm xs:text-base"
+                className="px-4 xs:px-6 py-2 xs:py-3 bg-accent hover:bg-opacity-80 text-white font-medium rounded-full transition-all neon-border text-xs xs:text-sm"
               >
-                Hire Me
+                Book Free Strategy Call
               </button>
               
               <button 
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-6 xs:px-8 py-3 bg-transparent border border-accent text-white font-medium rounded-full hover:bg-accent hover:bg-opacity-10 transition-all text-sm xs:text-base"
+                className="px-4 xs:px-6 py-2 xs:py-3 bg-transparent border border-accent text-white font-medium rounded-full hover:bg-accent hover:bg-opacity-10 transition-all text-xs xs:text-sm"
               >
-                View Projects
+                View Our Work
               </button>
+            </div>
+            
+            <div className="mt-2 xs:mt-4 text-center xs:text-left">
+              <p className="text-xs xs:text-sm text-gray-500">Usually ₹5K consultation - FREE this week</p>
             </div>
           </motion.div>
         </div>
         
-        <div className="w-full md:w-1/2 h-[300px] xs:h-[350px] sm:h-[400px] md:h-[600px] relative three-canvas">
+        <div className="w-full md:w-1/2 h-[250px] xs:h-[300px] sm:h-[400px] md:h-[600px] relative three-canvas">
           <SplineModel />
         </div>
       </div>
-
-      
-      {/* Scroll indicator */}
-      <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-      >
-        <div className="w-6 h-10 rounded-full border-2 border-white flex justify-center">
-          <motion.div 
-            className="w-1 h-2 bg-white rounded-full mt-2"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          />
-        </div>
-      </motion.div>
     </section>
   )
 }

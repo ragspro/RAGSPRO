@@ -1,4 +1,5 @@
 import { FiGithub, FiLinkedin, FiTwitter, FiInstagram, FiMail, FiMapPin, FiHeart } from 'react-icons/fi'
+import Link from 'next/link'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -16,11 +17,11 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
-          <div className="lg:col-span-2">
+          <div>
             <h3 className="text-3xl font-bold text-gradient mb-4">RAGSPRO</h3>
             <p className="text-gray-400 mb-6 max-w-md">
-              Transforming ideas into digital reality. Specializing in premium web development, 
-              AI solutions, and innovative digital products that drive business growth.
+              RAGSPRO - Building profitable AI products since 2023. 
+              Turning innovative ideas into revenue-generating digital businesses.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -61,21 +62,13 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold text-white mb-6">Quick Links</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-0">
               <li>
                 <button 
-                  onClick={() => scrollToSection('about')}
+                  onClick={() => scrollToSection('services')}
                   className="text-gray-400 hover:text-accent transition-colors flex items-center"
                 >
-                  About Me
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('resume')}
-                  className="text-gray-400 hover:text-accent transition-colors flex items-center"
-                >
-                  Resume
+                  Services
                 </button>
               </li>
               <li>
@@ -88,47 +81,112 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('services')}
+                  onClick={() => scrollToSection('pricing')}
                   className="text-gray-400 hover:text-accent transition-colors flex items-center"
                 >
-                  Services
+                  Pricing
                 </button>
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('request-project')}
+                  onClick={() => scrollToSection('contact')}
                   className="text-gray-400 hover:text-accent transition-colors flex items-center"
                 >
-                  Request Project
+                  Contact
                 </button>
+              </li>
+              <li>
+                <Link href="/our-story">
+                  <span className="text-gray-400 hover:text-accent transition-colors flex items-center cursor-pointer">
+                    Our Story
+                  </span>
+                </Link>
               </li>
             </ul>
           </div>
           
-          {/* Contact Info */}
+          {/* Products */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-6">Products</h4>
+            <ul className="space-y-3">
+              <li>
+                <a 
+                  href="https://glow.ragspro.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-accent transition-colors"
+                >
+                  GLOW
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://lawai.ragspro.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-accent transition-colors"
+                >
+                  LAW-AI
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://maid-agency.vercel.app" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-accent transition-colors"
+                >
+                  Maid Agency
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://elito-premium-shoes.vercel.app" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-accent transition-colors"
+                >
+                  Elito Shoes
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://himshakti.ragspro.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-accent transition-colors"
+                >
+                  Himshakti
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Get in Touch */}
           <div>
             <h4 className="text-lg font-semibold text-white mb-6">Get in Touch</h4>
             <div className="space-y-4">
               <div className="flex items-center">
-                <FiMapPin className="text-accent mr-3" size={16} />
-                <span className="text-gray-400">Delhi, India</span>
-              </div>
-              <div className="flex items-center">
                 <FiMail className="text-accent mr-3" size={16} />
                 <a 
-                  href="mailto:ragsproai@gmail.com" 
+                  href="mailto:raghav@ragspro.com" 
                   className="text-gray-400 hover:text-accent transition-colors"
                 >
-                  ragsproai@gmail.com
+                  raghav@ragspro.com
                 </a>
               </div>
-              <div className="mt-4">
-                <button 
-                  onClick={() => scrollToSection('contact')}
-                  className="px-4 py-2 bg-accent hover:bg-opacity-80 text-white text-sm font-medium rounded-lg transition-all"
+              <div className="flex items-center">
+                <span className="text-accent mr-3" size={16}>📱</span>
+                <a 
+                  href="tel:+918700048490" 
+                  className="text-gray-400 hover:text-accent transition-colors"
                 >
-                  Contact Me
-                </button>
+                  +91-8700048490
+                </a>
+              </div>
+              <div className="flex items-center">
+                <FiMapPin className="text-accent mr-3" size={16} />
+                <span className="text-gray-400">Delhi, India</span>
               </div>
             </div>
           </div>
@@ -143,18 +201,16 @@ export default function Footer() {
               &copy; {currentYear} RAGSPRO. Made with <FiHeart className="text-red-500 mx-1" size={14} /> in Delhi, India
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <button 
-                onClick={() => alert('Privacy Policy page coming soon!')}
-                className="text-gray-500 hover:text-accent text-sm transition-colors"
-              >
-                Privacy Policy
-              </button>
-              <button 
-                onClick={() => alert('Terms of Service page coming soon!')}
-                className="text-gray-500 hover:text-accent text-sm transition-colors"
-              >
-                Terms of Service
-              </button>
+              <Link href="/privacy-policy">
+                <span className="text-gray-500 hover:text-accent text-sm transition-colors cursor-pointer">
+                  Privacy Policy
+                </span>
+              </Link>
+              <Link href="/terms-of-service">
+                <span className="text-gray-500 hover:text-accent text-sm transition-colors cursor-pointer">
+                  Terms of Service
+                </span>
+              </Link>
             </div>
           </div>
         </div>

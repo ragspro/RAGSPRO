@@ -24,3 +24,10 @@ export const EMAILJS_CONFIG = {
 // {{subject}} - Email subject
 // {{message}} - Email message
 // {{to_name}} - Your name (Raghav Shah)
+// {{phone}} - Sender's phone number
+// {{project_type}} - Type of project
+// {{budget}} - Budget range
+// {{timeline}} - Project timeline
+// {{description}} - Project description
+
+// Default mailto fallback email: raghav@ragspro.com

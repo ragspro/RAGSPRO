@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FiSend, FiCheck, FiCode, FiSmartphone, FiGlobe, FiZap } from 'react-icons/fi'
+import { FiSend, FiCheck, FiCode, FiSmartphone, FiGlobe, FiZap, FiCpu, FiTrendingUp } from 'react-icons/fi'
 import emailjs from '@emailjs/browser'
 import { EMAILJS_CONFIG } from '../utils/emailConfig'
 
@@ -20,27 +20,24 @@ export default function RequestProjectSection() {
   const [errors, setErrors] = useState({})
   
   const projectTypes = [
-    { id: 'website', name: 'Website Development', icon: <FiGlobe /> },
-    { id: 'app', name: 'Mobile App', icon: <FiSmartphone /> },
-    { id: 'landing', name: 'Landing Page', icon: <FiCode /> },
-    { id: 'automation', name: 'Automation Tool', icon: <FiZap /> },
+    { id: 'ai-product', name: 'AI Product Development', icon: <FiCpu /> },
+    { id: 'automation', name: 'Business Automation', icon: <FiZap /> },
+    { id: 'ai-assistant', name: 'Custom AI Assistant', icon: <FiSmartphone /> },
+    { id: 'optimization', name: 'Revenue Optimization', icon: <FiTrendingUp /> },
     { id: 'other', name: 'Other', icon: <FiCode /> }
   ]
   
   const budgetRanges = [
-    '₹10,000 - ₹25,000',
-    '₹25,000 - ₹50,000', 
-    '₹50,000 - ₹1,00,000',
-    '₹1,00,000+',
-    'Let\'s Discuss'
+    '₹50K-₹1L',
+    '₹1L-₹3L',
+    '₹3L-₹5L',
+    '₹5L+'
   ]
   
   const timelines = [
-    '1-2 weeks',
-    '2-4 weeks',
-    '1-2 months',
-    '2-3 months',
-    'Flexible'
+    'Rush - 30 days',
+    'Standard - 60 days',
+    'Flexible - 90+ days'
   ]
   
   const handleChange = (e) => {
@@ -76,7 +73,7 @@ export default function RequestProjectSection() {
     
     const projectTypeLabel = projectTypes.find(type => type.id === formData.projectType)?.name || formData.projectType
     
-    const mailtoLink = `mailto:ragsproai@gmail.com?subject=Project Request - ${projectTypeLabel}&body=${encodeURIComponent(
+    const mailtoLink = `mailto:raghav@ragspro.com?subject=Project Request - ${projectTypeLabel}&body=${encodeURIComponent(
       `New Project Request:\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'Not provided'}\n\nProject Type: ${projectTypeLabel}\nBudget: ${formData.budget || 'Not specified'}\nTimeline: ${formData.timeline || 'Not specified'}\n\nProject Description:\n${formData.description}`
     )}`
     
@@ -127,10 +124,10 @@ export default function RequestProjectSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 reveal">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Request a <span className="text-gradient">Project</span>
+            Ready to Build Your Profitable <span className="text-gradient">AI Product?</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Have an idea? Let's bring it to life! Tell me about your project and I'll get back to you with a custom solution.
+            Get a free 30-minute consultation to discuss your project
           </p>
         </div>
         
@@ -144,7 +141,7 @@ export default function RequestProjectSection() {
               >
                 <FiCheck size={48} className="text-green-500 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-2">Request Submitted!</h3>
-                <p className="text-gray-300">I'll review your project and get back to you within 24 hours.</p>
+                <p className="text-gray-300">We'll review your project and get back to you within 4 hours.</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -293,7 +290,7 @@ export default function RequestProjectSection() {
                   ) : (
                     <>
                       <FiSend className="mr-2" />
-                      Submit Project Request
+                      Book Free Strategy Call
                     </>
                   )}
                 </button>
