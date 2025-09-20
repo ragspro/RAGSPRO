@@ -36,11 +36,10 @@ export default function Navbar() {
     { name: 'Home', href: '/', isExternal: false },
     { name: 'Services', href: '/#services', isExternal: false },
     { name: 'Projects', href: '/#projects', isExternal: false },
+    { name: 'Packages', href: '/#investment-packages', isExternal: false },
     { name: 'Get Quote', href: '/#request-project', isExternal: false },
-    { name: 'Pricing', href: '/#pricing', isExternal: false },
     { name: 'Contact', href: '/#contact', isExternal: false },
     { name: 'Meet Founder', href: '/meet-founder', isExternal: false },
-    { name: 'Our Story', href: '/our-story', isExternal: false },
   ]
   
   return (

@@ -6,22 +6,22 @@ export default function MeetFounder() {
   const achievements = [
     {
       icon: <FiCode size={24} />,
-      title: "50+ Projects Delivered",
-      description: "Successfully delivered AI products and web solutions"
+      title: "Multiple Projects Delivered",
+      description: "Successfully delivered AI products including LAW-AI and GLOW"
     },
     {
       icon: <FiUsers size={24} />,
-      title: "100+ Happy Clients",
-      description: "Satisfied clients across India and globally"
+      title: "Growing Client Base",
+      description: "Building relationships with clients across India"
     },
     {
       icon: <FiTrendingUp size={24} />,
-      title: "₹2Cr+ Revenue Generated",
-      description: "Helped clients generate substantial revenue through AI products"
+      title: "Revenue-Focused Solutions",
+      description: "Specializing in profitable AI products and automation"
     },
     {
       icon: <FiAward size={24} />,
-      title: "BCA Graduate",
+      title: "BCA Graduate (2022-2025)",
       description: "Computer Applications from Maharshi Dayanand University"
     }
   ]
@@ -120,7 +120,7 @@ export default function MeetFounder() {
                 <div className="flex flex-wrap gap-4 pt-4">
                   <div className="flex items-center text-gray-400">
                     <FiMail className="text-accent mr-2" size={16} />
-                    <span>bhupenderpratap0@gmail.com</span>
+                    <span>raghav@ragspro.com</span>
                   </div>
                   <div className="flex items-center text-gray-400">
                     <span className="text-accent mr-2">📱</span>
