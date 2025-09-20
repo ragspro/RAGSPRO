@@ -16,15 +16,21 @@ const nextConfig = {
   
   // Webpack optimizations for performance
   webpack: (config, { dev, isServer }) => {
+    // Exclude heavy dependencies
+    config.externals = config.externals || [];
+    if (!isServer) {
+      config.externals.push({
+        '@splinetool/react-spline': 'spline',
+        '@splinetool/runtime': 'splineRuntime'
+      });
+    }
+    
     if (!dev && !isServer) {
-      // Enable source maps for debugging
-      config.devtool = 'source-map';
-      
-      // Optimize chunks
+      // Aggressive chunk splitting
       config.optimization.splitChunks = {
         chunks: 'all',
-        minSize: 20000,
-        maxSize: 244000,
+        minSize: 10000,
+        maxSize: 100000,
         cacheGroups: {
           vendor: {
             test: /[\\/]node_modules[\\/]/,
