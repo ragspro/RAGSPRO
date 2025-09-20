@@ -20,13 +20,37 @@ export default function Document() {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         
-        {/* SEO Meta Tags */}
-        <meta name="description" content="RAGSPRO - Premium Web Development & AI Solutions by Raghav Shah" />
-        <meta property="og:title" content="RAGSPRO - Code. Create. Dominate." />
-        <meta property="og:description" content="Delhi-based Full Stack Developer offering premium web development, AI tools, and digital products." />
+        {/* Advanced SEO Meta Tags */}
+        <meta name="description" content="RAGSPRO - #1 AI Product Development Agency in Delhi. Premium web development, AI tools, automation solutions. Raghav Shah - Full Stack Developer specializing in Next.js, React, Three.js. Get ₹50K+ monthly revenue solutions." />
+        <meta name="keywords" content="RAGSPRO, Raghav Shah, AI Product Development, Web Development Delhi, Full Stack Developer, Next.js Developer, React Developer, AI Tools, Automation Solutions, Three.js, Premium Web Design, Delhi Developer, AI Agency, Web Development Agency" />
+        <meta name="author" content="Raghav Shah - RAGSPRO" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
+        <meta name="geo.region" content="IN-DL" />
+        <meta name="geo.placename" content="Delhi, India" />
+        <meta name="geo.position" content="28.6139;77.2090" />
+        <meta name="ICBM" content="28.6139, 77.2090" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="RAGSPRO - #1 AI Product Development Agency | Raghav Shah" />
+        <meta property="og:description" content="Premium AI Product Development Agency in Delhi. Full Stack Developer Raghav Shah offers Next.js, React, AI tools, automation solutions. Generate ₹50K+ monthly revenue." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ragspro.in" />
-        <meta property="og:image" content="https://ragspro.in/images/og-image.jpg" />
+        <meta property="og:image" content="https://ragspro.in/images/ragspro-og.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="RAGSPRO - AI Product Development Agency" />
+        <meta property="og:site_name" content="RAGSPRO" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@ragspro" />
+        <meta name="twitter:creator" content="@ragspro" />
+        <meta name="twitter:title" content="RAGSPRO - #1 AI Product Development Agency" />
+        <meta name="twitter:description" content="Premium AI Product Development Agency in Delhi. Full Stack Developer specializing in Next.js, React, AI tools." />
+        <meta name="twitter:image" content="https://ragspro.in/images/ragspro-twitter.jpg" />
         
         {/* Performance Optimization */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,40 +70,109 @@ export default function Document() {
         {/* SEO Optimization */}
         <link rel="canonical" href="https://ragspro.in" />
         
-        {/* JSON-LD Structured Data */}
+        {/* Enhanced JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Raghav Shah",
-              "jobTitle": "Full Stack Developer",
-              "description": "Delhi-based Full Stack Developer offering premium web development, AI tools, and digital products",
-              "url": "https://ragspro.in",
-              "email": "ragsproai@gmail.com",
-              "telephone": "+91-8700048490",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Delhi",
-                "addressCountry": "IN"
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "RAGSPRO",
+                "alternateName": "RAGS PRO",
+                "url": "https://ragspro.in",
+                "logo": "https://ragspro.in/images/ragspro-logo.png",
+                "description": "#1 AI Product Development Agency in Delhi. Premium web development, AI tools, automation solutions by Raghav Shah.",
+                "founder": {
+                  "@type": "Person",
+                  "name": "Raghav Shah"
+                },
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Delhi",
+                  "addressRegion": "Delhi",
+                  "addressCountry": "IN"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+91-8700048490",
+                  "contactType": "customer service",
+                  "email": "ragsproai@gmail.com",
+                  "availableLanguage": ["English", "Hindi"]
+                },
+                "sameAs": [
+                  "https://github.com/ragspro",
+                  "https://www.linkedin.com/in/bhupederpratap/",
+                  "https://twitter.com/ragspro",
+                  "https://www.instagram.com/ragsproai/"
+                ],
+                "serviceArea": {
+                  "@type": "Country",
+                  "name": "India"
+                },
+                "areaServed": "Worldwide",
+                "knowsAbout": [
+                  "AI Product Development",
+                  "Web Development",
+                  "Automation Solutions",
+                  "Next.js Development",
+                  "React Development",
+                  "Three.js",
+                  "Full Stack Development",
+                  "AI Integration",
+                  "UI/UX Design",
+                  "SEO Optimization"
+                ]
               },
-              "sameAs": [
-                "https://github.com/ragspro",
-                "https://www.linkedin.com/in/bhupederpratap/",
-                "https://twitter.com/ragspro",
-                "https://www.instagram.com/ragsproai/"
-              ],
-              "knowsAbout": [
-                "Web Development",
-                "AI Integration",
-                "UI/UX Design",
-                "SEO Optimization",
-                "Next.js",
-                "React",
-                "Three.js"
-              ]
-            })
+              {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Raghav Shah",
+                "alternateName": "RAGSPRO",
+                "jobTitle": "Full Stack Developer & AI Solutions Architect",
+                "description": "#1 AI Product Development Expert in Delhi. Specializing in Next.js, React, AI tools, automation solutions.",
+                "url": "https://ragspro.in",
+                "email": "ragsproai@gmail.com",
+                "telephone": "+91-8700048490",
+                "image": "https://ragspro.in/images/raghav-profile.jpg",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Delhi",
+                  "addressRegion": "Delhi",
+                  "addressCountry": "IN"
+                },
+                "sameAs": [
+                  "https://github.com/ragspro",
+                  "https://www.linkedin.com/in/bhupederpratap/",
+                  "https://twitter.com/ragspro",
+                  "https://www.instagram.com/ragsproai/"
+                ],
+                "hasOccupation": {
+                  "@type": "Occupation",
+                  "name": "Full Stack Developer",
+                  "occupationLocation": {
+                    "@type": "City",
+                    "name": "Delhi"
+                  }
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "RAGSPRO",
+                "url": "https://ragspro.in",
+                "description": "#1 AI Product Development Agency - Premium web development and AI solutions by Raghav Shah",
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "RAGSPRO"
+                },
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": "https://ragspro.in/?s={search_term_string}",
+                  "query-input": "required name=search_term_string"
+                }
+              }
+            ])
           }}
         />
       </Head>

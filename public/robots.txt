@@ -11,3 +11,9 @@ Crawl-delay: 1
 Disallow: /admin/
 Disallow: /_next/
 Disallow: /api/
+
+# Allow important pages
+Allow: /
+Allow: /projects
+Allow: /our-story
+Allow: /documents/Raghav_Shah_Resume.pdf

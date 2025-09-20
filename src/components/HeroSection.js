@@ -29,16 +29,16 @@ export default function HeroSection() {
             className="space-y-4 md:space-y-6"
           >
             <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-3 md:mb-6 leading-tight">
-              <span className="text-white block">Welcome to</span>
-              <span className="text-gradient block">RAGSPRO</span>
+              <span className="text-white block">RAGSPRO</span>
+              <span className="text-gradient block">#1 AI Product Development Agency</span>
             </h1>
             
             <h2 className="text-sm xs:text-base sm:text-lg md:text-2xl lg:text-3xl font-medium text-gray-300 mb-3 md:mb-6 leading-relaxed">
-              AI Product Development Agency & Digital Solutions Partner
+              Premium Web Development & AI Solutions by Raghav Shah | Delhi, India
             </h2>
             
             <p className="text-gray-400 text-sm sm:text-base md:text-lg mb-4 md:mb-8 max-w-lg leading-relaxed">
-              We build profitable AI products and automation solutions that help businesses generate ₹50K+ monthly recurring revenue. From concept to launch in 15-30 days.
+              <strong>RAGSPRO</strong> - Leading AI Product Development Agency in Delhi. We build profitable AI products, automation solutions, and premium websites that generate ₹50K+ monthly recurring revenue. Expert in Next.js, React, Three.js development.
             </p>
             
             <div className="flex flex-col xs:flex-row gap-2 xs:gap-3">
