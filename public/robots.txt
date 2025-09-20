@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://ragspro.in/sitemap.xml
+Sitemap: https://ragspro.com/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1

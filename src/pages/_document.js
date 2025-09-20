@@ -36,8 +36,8 @@ export default function Document() {
         <meta property="og:title" content="RAGSPRO - #1 AI Product Development Agency | Raghav Shah" />
         <meta property="og:description" content="Premium AI Product Development Agency in Delhi. Full Stack Developer Raghav Shah offers Next.js, React, AI tools, automation solutions. Generate ₹50K+ monthly revenue." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ragspro.in" />
-        <meta property="og:image" content="https://ragspro.in/images/ragspro-og.jpg" />
+        <meta property="og:url" content="https://ragspro.com" />
+        <meta property="og:image" content="https://ragspro.com/images/ragspro-og.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="RAGSPRO - AI Product Development Agency" />
@@ -50,7 +50,7 @@ export default function Document() {
         <meta name="twitter:creator" content="@ragspro" />
         <meta name="twitter:title" content="RAGSPRO - #1 AI Product Development Agency" />
         <meta name="twitter:description" content="Premium AI Product Development Agency in Delhi. Full Stack Developer specializing in Next.js, React, AI tools." />
-        <meta name="twitter:image" content="https://ragspro.in/images/ragspro-twitter.jpg" />
+        <meta name="twitter:image" content="https://ragspro.com/images/ragspro-twitter.jpg" />
         
         {/* Performance Optimization */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -68,7 +68,7 @@ export default function Document() {
         <meta name="force-rendering" content="webkit" />
         
         {/* SEO Optimization */}
-        <link rel="canonical" href="https://ragspro.in" />
+        <link rel="canonical" href="https://ragspro.com" />
         
         {/* Enhanced JSON-LD Structured Data */}
         <script
@@ -80,8 +80,8 @@ export default function Document() {
                 "@type": "Organization",
                 "name": "RAGSPRO",
                 "alternateName": "RAGS PRO",
-                "url": "https://ragspro.in",
-                "logo": "https://ragspro.in/images/ragspro-logo.png",
+                "url": "https://ragspro.com",
+                "logo": "https://ragspro.com/images/ragspro-logo.png",
                 "description": "#1 AI Product Development Agency in Delhi. Premium web development, AI tools, automation solutions by Raghav Shah.",
                 "founder": {
                   "@type": "Person",
@@ -131,10 +131,10 @@ export default function Document() {
                 "alternateName": "RAGSPRO",
                 "jobTitle": "Full Stack Developer & AI Solutions Architect",
                 "description": "#1 AI Product Development Expert in Delhi. Specializing in Next.js, React, AI tools, automation solutions.",
-                "url": "https://ragspro.in",
+                "url": "https://ragspro.com",
                 "email": "ragsproai@gmail.com",
                 "telephone": "+91-8700048490",
-                "image": "https://ragspro.in/images/raghav-profile.jpg",
+                "image": "https://ragspro.com/images/raghav-profile.jpg",
                 "address": {
                   "@type": "PostalAddress",
                   "addressLocality": "Delhi",
@@ -160,7 +160,7 @@ export default function Document() {
                 "@context": "https://schema.org",
                 "@type": "WebSite",
                 "name": "RAGSPRO",
-                "url": "https://ragspro.in",
+                "url": "https://ragspro.com",
                 "description": "#1 AI Product Development Agency - Premium web development and AI solutions by Raghav Shah",
                 "publisher": {
                   "@type": "Organization",
@@ -168,7 +168,7 @@ export default function Document() {
                 },
                 "potentialAction": {
                   "@type": "SearchAction",
-                  "target": "https://ragspro.in/?s={search_term_string}",
+                  "target": "https://ragspro.com/?s={search_term_string}",
                   "query-input": "required name=search_term_string"
                 }
               }
