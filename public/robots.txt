@@ -18,6 +18,7 @@ Disallow: /500
 # Allow important pages
 Allow: /
 Allow: /projects
+Allow: /meet-founder
 Allow: /our-story
 Allow: /privacy-policy
 Allow: /terms-of-service

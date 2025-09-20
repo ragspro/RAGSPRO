@@ -210,6 +210,7 @@ export default function RequestProjectSection() {
                             ? 'border-accent bg-accent bg-opacity-10 text-accent'
                             : 'border-gray-700 text-gray-300 hover:border-accent hover:text-accent'
                         }`}
+                        aria-label={`Select ${type.name} project type`}
                       >
                         <div className="flex flex-col items-center">
                           <span className="mb-1">{type.icon}</span>
@@ -231,6 +232,7 @@ export default function RequestProjectSection() {
                       value={formData.budget}
                       onChange={handleChange}
                       className="w-full bg-secondary bg-opacity-50 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-accent"
+                      aria-label="Select budget range"
                     >
                       <option value="">Select budget range</option>
                       {budgetRanges.map((range, index) => (
@@ -248,6 +250,7 @@ export default function RequestProjectSection() {
                       value={formData.timeline}
                       onChange={handleChange}
                       className="w-full bg-secondary bg-opacity-50 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-accent"
+                      aria-label="Select project timeline"
                     >
                       <option value="">Select timeline</option>
                       {timelines.map((time, index) => (

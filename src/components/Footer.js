@@ -29,6 +29,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="p-3 bg-gray-800 rounded-full text-gray-400 hover:text-white hover:bg-accent transition-all"
+                aria-label="Visit RAGSPRO GitHub profile"
               >
                 <FiGithub size={20} />
               </a>
@@ -37,6 +38,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="p-3 bg-gray-800 rounded-full text-gray-400 hover:text-white hover:bg-accent transition-all"
+                aria-label="Connect with RAGSPRO on LinkedIn"
               >
                 <FiLinkedin size={20} />
               </a>
@@ -45,6 +47,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="p-3 bg-gray-800 rounded-full text-gray-400 hover:text-white hover:bg-accent transition-all"
+                aria-label="Follow RAGSPRO on Twitter"
               >
                 <FiTwitter size={20} />
               </a>
@@ -53,6 +56,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="p-3 bg-gray-800 rounded-full text-gray-400 hover:text-white hover:bg-accent transition-all"
+                aria-label="Follow RAGSPRO on Instagram"
               >
                 <FiInstagram size={20} />
               </a>
@@ -94,6 +98,13 @@ export default function Footer() {
                 >
                   Contact
                 </button>
+              </li>
+              <li>
+                <Link href="/meet-founder">
+                  <span className="text-gray-400 hover:text-accent transition-colors flex items-center cursor-pointer">
+                    Meet Founder
+                  </span>
+                </Link>
               </li>
               <li>
                 <Link href="/our-story">
@@ -197,17 +208,17 @@ export default function Footer() {
       <div className="border-t border-gray-800 bg-black">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm flex items-center">
+            <p className="text-gray-300 text-sm flex items-center">
               &copy; {currentYear} RAGSPRO. Made with <FiHeart className="text-red-500 mx-1" size={14} /> in Delhi, India
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="/privacy-policy">
-                <span className="text-gray-500 hover:text-accent text-sm transition-colors cursor-pointer">
+                <span className="text-gray-300 hover:text-accent text-sm transition-colors cursor-pointer">
                   Privacy Policy
                 </span>
               </Link>
               <Link href="/terms-of-service">
-                <span className="text-gray-500 hover:text-accent text-sm transition-colors cursor-pointer">
+                <span className="text-gray-300 hover:text-accent text-sm transition-colors cursor-pointer">
                   Terms of Service
                 </span>
               </Link>

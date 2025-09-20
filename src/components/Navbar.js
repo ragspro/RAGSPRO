@@ -39,6 +39,7 @@ export default function Navbar() {
     { name: 'Get Quote', href: '/#request-project', isExternal: false },
     { name: 'Pricing', href: '/#pricing', isExternal: false },
     { name: 'Contact', href: '/#contact', isExternal: false },
+    { name: 'Meet Founder', href: '/meet-founder', isExternal: false },
     { name: 'Our Story', href: '/our-story', isExternal: false },
   ]
   
@@ -71,6 +72,8 @@ export default function Navbar() {
         <button 
           className="md:hidden text-white p-2 -mr-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isOpen}
         >
           {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>

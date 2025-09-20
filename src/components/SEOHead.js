@@ -3,7 +3,7 @@ import Head from 'next/head'
 export default function SEOHead({ 
   title = "RAGSPRO - #1 AI Product Development Agency | Raghav Shah | Delhi, India",
   description = "RAGSPRO - Leading AI Product Development Agency in Delhi by Raghav Shah. Premium web development, AI tools, automation solutions. Generate ₹50K+ monthly revenue. Expert in Next.js, React, Three.js. Book free consultation today!",
-  keywords = "RAGSPRO, Raghav Shah, AI Product Development Agency Delhi, Web Development Delhi, Full Stack Developer, Next.js Developer, React Developer, AI Tools, Automation Solutions, Premium Web Design",
+  keywords = "RAGSPRO, Raghav Shah, Bhupender Pratap, AI Product Development Agency Delhi, Web Development Delhi, Full Stack Developer, Next.js Developer, React Developer, AI Tools, Automation Solutions, Premium Web Design, LAW-AI, GLOW AI, lawai.ragspro.com, glow.ragspro.com, AI developer, SaaS builder, Legal Tech, Python developer, BCA graduate, Delhi developer, AI automation, cyber intelligence",
   url = "https://ragspro.com",
   image = "https://ragspro.com/images/ragspro-og.jpg"
 }) {
@@ -138,7 +138,43 @@ export default function SEOHead({
                 ],
                 "worksFor": {
                   "@id": `${url}/#organization`
-                }
+                },
+                "knowsAbout": [
+                  "AI Product Development",
+                  "Web Development", 
+                  "LAW-AI",
+                  "GLOW AI",
+                  "Legal Tech",
+                  "SaaS Development",
+                  "Python Automation",
+                  "Cyber Intelligence",
+                  "Next.js",
+                  "React",
+                  "Full Stack Development"
+                ],
+                "hasCredential": {
+                  "@type": "EducationalOccupationalCredential",
+                  "credentialCategory": "degree",
+                  "educationalLevel": "Bachelor",
+                  "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "Maharshi Dayanand University"
+                  }
+                },
+                "owns": [
+                  {
+                    "@type": "WebSite",
+                    "name": "LAW-AI",
+                    "url": "https://lawai.ragspro.com",
+                    "description": "SaaS Legal Automation Platform"
+                  },
+                  {
+                    "@type": "WebSite",
+                    "name": "GLOW AI", 
+                    "url": "https://glow.ragspro.com",
+                    "description": "AI Photo Enhancement Tool"
+                  }
+                ]
               },
               {
                 "@type": "WebSite",

@@ -1,72 +1,62 @@
-import React from 'react';
-
 // Performance optimization utilities
-export const optimizeForDevice = () => {
-  if (typeof window === 'undefined') return;
 
-  // Detect device capabilities
-  const isHighPerformance = window.navigator.hardwareConcurrency >= 4;
-  const hasGoodGPU = window.navigator.userAgent.includes('Chrome') || window.navigator.userAgent.includes('Safari');
-  
-  // Set performance level
-  window.PERFORMANCE_LEVEL = isHighPerformance && hasGoodGPU ? 'high' : 'medium';
-  
-  // Optimize animations based on device
-  if (!isHighPerformance) {
-    document.documentElement.style.setProperty('--animation-duration', '0.2s');
-  }
-};
+// Passive event listeners for better scroll performance
+export const addPassiveEventListener = (element, event, handler, options = {}) => {
+  element.addEventListener(event, handler, { passive: true, ...options })
+}
 
-// Lazy load heavy components
-export const lazyLoadComponent = (importFunc) => {
-  return React.lazy(() => 
-    importFunc().then(module => ({
-      default: module.default
-    }))
-  );
-};
-
-// Debounce scroll events
+// Debounce function for scroll events
 export const debounce = (func, wait) => {
-  let timeout;
+  let timeout
   return function executedFunction(...args) {
     const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-};
+      clearTimeout(timeout)
+      func(...args)
+    }
+    clearTimeout(timeout)
+    timeout = setTimeout(later, wait)
+  }
+}
 
-// Optimize Three.js performance
-export const getThreeJSConfig = () => {
-  const isHighPerf = window.PERFORMANCE_LEVEL === 'high';
+// Throttle function for resize events
+export const throttle = (func, limit) => {
+  let inThrottle
+  return function() {
+    const args = arguments
+    const context = this
+    if (!inThrottle) {
+      func.apply(context, args)
+      inThrottle = true
+      setTimeout(() => inThrottle = false, limit)
+    }
+  }
+}
+
+// Lazy loading utility
+export const lazyLoad = (selector) => {
+  const elements = document.querySelectorAll(selector)
   
-  return {
-    antialias: isHighPerf,
-    powerPreference: 'high-performance',
-    stencil: false,
-    depth: true,
-    alpha: true,
-    premultipliedAlpha: false,
-    preserveDrawingBuffer: false,
-    failIfMajorPerformanceCaveat: false
-  };
-};
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const element = entry.target
+          element.classList.add('loaded')
+          observer.unobserve(element)
+        }
+      })
+    })
+    
+    elements.forEach(el => observer.observe(el))
+  }
+}
 
 // Preload critical resources
-export const preloadCriticalResources = () => {
-  const criticalImages = [
-    '/images/hero-bg.jpg',
-    '/images/profile.jpg'
-  ];
-  
-  criticalImages.forEach(src => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = src;
-    document.head.appendChild(link);
-  });
-};
+export const preloadResource = (href, as, type) => {
+  const link = document.createElement('link')
+  link.rel = 'preload'
+  link.href = href
+  link.as = as
+  if (type) link.type = type
+  document.head.appendChild(link)
+}
