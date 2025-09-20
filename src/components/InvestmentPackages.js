@@ -162,17 +162,19 @@ export default function InvestmentPackages() {
                 </div>
               </div>
 
-              <button
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              <a
+                href={`https://wa.me/918700048490?text=Hi, I'm interested in the ${pkg.name} (${pkg.price}). Can we discuss the project details?`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`w-full py-3 rounded-lg font-semibold transition-all flex items-center justify-center ${
                   pkg.popular
                     ? 'bg-accent text-black hover:bg-accent/90'
                     : 'bg-gray-800 text-white hover:bg-gray-700'
                 }`}
               >
-                Get Started
-                <FiArrowRight className="ml-2" size={16} />
-              </button>
+                <span className="mr-2">💬</span>
+                Discuss Project
+              </a>
             </motion.div>
           ))}
         </div>
