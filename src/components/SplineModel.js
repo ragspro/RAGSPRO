@@ -1,9 +1,37 @@
-import { useState } from 'react'
-import Spline from '@splinetool/react-spline'
+import { useState, useEffect } from 'react'
+import dynamic from 'next/dynamic'
+
+const Spline = dynamic(() => import('@splinetool/react-spline'), {
+  ssr: false,
+  loading: () => (
+    <div className="absolute inset-0 flex items-center justify-center bg-gray-900 rounded-2xl">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent mx-auto mb-4"></div>
+        <p className="text-gray-400 text-sm">Loading 3D Model...</p>
+      </div>
+    </div>
+  )
+})
 
 export default function SplineModel() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <div className="absolute inset-0 flex items-center justify-center bg-gray-900 rounded-2xl">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent mx-auto mb-4"></div>
+          <p className="text-gray-400 text-sm">Loading 3D Model...</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="relative w-full h-full">
