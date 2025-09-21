@@ -25,7 +25,7 @@ export default function SplineModel() {
         </div>
       ) : (
         <Spline 
-          scene="https://prod.spline.design/23srEjEfgbBjQIle/scene.splinecode"
+          scene="https://prod.spline.design/61258380-4c9f-4385-8ec7-40a272326816/scene.splinecode"
           onLoad={() => setLoading(false)}
           onError={() => {
             setLoading(false)
