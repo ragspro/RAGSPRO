@@ -54,6 +54,16 @@ export default function ProjectsSection() {
       technologies: ['Next.js', 'React', 'TailwindCSS', 'PayPal API'],
       liveLink: 'https://himshakti.ragspro.com',
       githubLink: 'https://github.com/ragspro/himshakti-ecommerce'
+    },
+    {
+      id: 5,
+      title: 'SAPD - Smart Analytics Platform',
+      category: ['web', 'ai'],
+      image: '/images/projects/sapd.jpg',
+      description: 'Smart Analytics Platform Dashboard with advanced data visualization and AI-powered insights for business intelligence.',
+      technologies: ['Next.js', 'React', 'Chart.js', 'TailwindCSS'],
+      liveLink: 'https://sapd-eight.vercel.app',
+      githubLink: 'https://github.com/ragspro/SAPD'
     }
   ]
   
