@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@splinetool/react-spline": "^4.1.0",
     "framer-motion": "^10.16.4",
     "gsap": "^3.12.2",
     "lottie-react": "^2.4.0",
