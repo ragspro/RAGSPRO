@@ -102,7 +102,7 @@ export default function ProjectsSection() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {filteredProjects.map((project) => (
+          {filteredProjects.slice(0, 2).map((project) => (
             <motion.div
               key={project.id}
               layout
