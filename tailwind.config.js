@@ -6,48 +6,64 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'xs': '375px',
       'sm': '640px',
       'md': '768px',
       'lg': '1024px',
       'xl': '1280px',
-      '2xl': '1536px',
+      '2xl': '1280px',
     },
     extend: {
       colors: {
-        primary: '#0a0a0a',
-        secondary: '#121212',
-        accent: '#6e44ff',
-        neon: '#00ffaa',
-        glass: 'rgba(255, 255, 255, 0.05)',
+        // Exact Benji.app color system
+        background: '#ffffff',
+        foreground: '#000000',
+        accent: '#21b30b', // Exact benji.app green
+        'accent-hover': '#1a9609',
+        gray: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+        },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        mono: ['Space Mono', 'monospace'],
+        heading: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        body: ['Geist', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['Geist', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['Fragment Mono', 'monospace'],
+      },
+      fontSize: {
+        'hero': ['72px', { lineHeight: '95%', letterSpacing: '-0.03em' }],
+        'hero-mobile': ['42px', { lineHeight: '95%', letterSpacing: '-0.03em' }],
       },
       spacing: {
-        'safe-top': 'env(safe-area-inset-top)',
-        'safe-bottom': 'env(safe-area-inset-bottom)',
-        'safe-left': 'env(safe-area-inset-left)',
-        'safe-right': 'env(safe-area-inset-right)',
+        'section-y': '120px',
+        'section-y-mobile': '80px',
+        '30': '120px',
       },
       animation: {
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'float': 'float 3s ease-in-out infinite',
+        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
       },
       keyframes: {
-        glow: {
-          '0%': { boxShadow: '0 0 5px rgba(110, 68, 255, 0.5)' },
-          '100%': { boxShadow: '0 0 20px rgba(110, 68, 255, 0.8), 0 0 30px rgba(0, 255, 170, 0.6)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
-      backdropFilter: {
-        'none': 'none',
-        'blur': 'blur(20px)',
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1.5rem',
+          sm: '2rem',
+          lg: '4rem',
+          xl: '5rem',
+        },
       },
     },
   },

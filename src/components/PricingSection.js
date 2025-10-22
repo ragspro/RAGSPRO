@@ -1,161 +1,159 @@
+'use client'
 import { motion } from 'framer-motion'
-import { FiCheck, FiStar } from 'react-icons/fi'
+import { FiCheck, FiZap } from 'react-icons/fi'
 
 export default function PricingSection() {
-  const packages = [
+  const steps = [
     {
-      id: 1,
-      name: 'STARTER PACKAGE',
-      price: 'From ₹20K',
-      timeline: '2-5 days',
-      description: 'Perfect for small businesses & startups',
-      features: [
-        'Landing page or basic website',
-        'Mobile responsive design',
-        'Basic SEO setup',
-        '7 days free support',
-        'Contact form integration'
-      ],
-      popular: false,
-      icon: '🚀',
-      buttonText: 'Get Started',
-      note: 'Timeline may vary based on requirements'
+      title: 'Request',
+      desc: 'Fill out our form and let us know what you want to build, literally anything.'
     },
     {
-      id: 2,
-      name: 'PROFESSIONAL PACKAGE',
-      price: 'From ₹75K',
-      timeline: '5-10 days',
-      description: 'Ideal for growing businesses',
-      features: [
-        'Multi-page website or web app',
-        'Advanced features & integrations',
-        'CMS or admin panel',
-        '30 days free support',
-        'Performance optimization'
-      ],
-      popular: true,
-      icon: '⭐',
-      buttonText: 'Get Started',
-      note: 'Complex features may extend timeline'
+      title: 'Meet the Team',
+      desc: 'Meet our developers and set up step-by-step clear roadmap for your startup.'
     },
     {
-      id: 3,
-      name: 'AI AUTOMATION PACKAGE',
-      price: 'From ₹1.5L',
-      timeline: '10-15 days',
-      description: 'AI-powered business solutions',
-      features: [
-        'Custom AI tool development',
-        'Business process automation',
-        'API integrations',
-        '60 days free support',
-        'Training & documentation'
-      ],
-      popular: false,
-      icon: '🤖',
-      buttonText: 'Get Quote',
-      note: 'AI complexity affects delivery time'
-    },
-    {
-      id: 4,
-      name: 'ENTERPRISE SOLUTION',
-      price: 'Custom Quote',
-      timeline: '15+ days',
-      description: 'Complete digital transformation',
-      features: [
-        'Full-scale custom development',
-        'Dedicated project management',
-        'Ongoing maintenance & updates',
-        '90+ days support included',
-        'Priority technical assistance'
-      ],
-      popular: false,
-      icon: '🏆',
-      buttonText: 'Discuss Project',
-      note: 'Timeline depends on project scope'
+      title: 'Receive',
+      desc: 'Receive your app within 20 days.'
     }
   ]
-  
+
+  const features = [
+    'Fully designed User Interface',
+    'Highest level of data security', 
+    'All tech stack supported',
+    'Unlimited iteration process',
+    '20 days turnaround',
+    'Distribution to 150K subscribers'
+  ]
+
   return (
-    <section id="pricing" className="section-padding bg-primary">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 reveal">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Investment <span className="text-gradient">Packages</span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto mb-6">
-            Transparent pricing with no hidden costs. Final pricing may vary based on specific requirements.
-          </p>
-          <div className="glass-card p-4 rounded-lg max-w-3xl mx-auto">
-            <p className="text-sm text-gray-300">
-              <strong className="text-accent">Important:</strong> All timelines are estimates and may vary based on project complexity. 
-              Support covers bug fixes and minor adjustments only. Major feature additions are quoted separately.
-            </p>
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {packages.map((pkg) => (
-            <motion.div
-              key={pkg.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: pkg.id * 0.1 }}
-              className={`glass-card p-6 rounded-2xl relative ${
-                pkg.popular ? 'border-2 border-accent' : ''
-              }`}
-            >
-              {pkg.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-accent text-white px-4 py-1 rounded-full text-sm font-medium flex items-center">
-                    <FiStar className="mr-1" size={14} />
-                    Most Popular
-                  </div>
-                </div>
-              )}
-              
-              <div className="text-center mb-6">
-                <div className="text-3xl mb-2">{pkg.icon}</div>
-                <h3 className="text-lg font-semibold text-white mb-2">{pkg.name}</h3>
-                <div className="text-2xl font-bold text-gradient mb-1">{pkg.price}</div>
-                <div className="text-sm text-accent mb-2">{pkg.timeline}</div>
-                <p className="text-gray-400 text-sm">{pkg.description}</p>
-              </div>
-              
-              <ul className="space-y-3 mb-6">
-                {pkg.features.map((feature, index) => (
-                  <li key={index} className="flex items-start text-sm text-gray-300">
-                    <FiCheck className="text-accent mr-2 mt-0.5 flex-shrink-0" size={16} />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              
-              {pkg.note && (
-                <div className="text-xs text-gray-500 mb-4 p-2 bg-gray-800/50 rounded">
-                  <strong>Note:</strong> {pkg.note}
-                </div>
-              )}
-              
-
-              
-
-            </motion.div>
-          ))}
-        </div>
-        
-        <div className="text-center mt-12 reveal">
-          <p className="text-gray-400 mb-4">Not sure which package fits?</p>
-          <a 
-            href="tel:+918700048490"
-            className="inline-block px-8 py-3 bg-accent hover:bg-opacity-80 text-white font-medium rounded-full transition-all"
+    <section id="pricing" className="w-full bg-white text-black py-20 px-6 md:px-16">
+      {/* 3-Step Process */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2 }}
+        className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mb-20"
+      >
+        {steps.map((step, i) => (
+          <motion.div
+            key={step.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className="text-center"
           >
-            Book Free Strategy Call
-          </a>
-          <p className="text-gray-400 text-sm mt-2">and we'll build a custom plan for you.</p>
-        </div>
+            <h3 className="text-xl font-bold text-black mb-2">{step.title}</h3>
+            <p className="text-gray-600">{step.desc}</p>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 items-start">
+        
+        {/* Left Column: Steps + Cards */}
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="space-y-6"
+        >
+          <h3 className="text-5xl font-semibold leading-tight tracking-tight">
+            Simple pricing.<br/> 
+            <span className="text-gray-600">Standout SaaS.</span>
+          </h3>
+          <p className="text-gray-500">
+            Clear costs, no hidden fees. Select from monthly subscriptions or individual project rates.
+          </p>
+          
+          {/* Black Gradient Card */}
+          <motion.div 
+            whileHover={{ rotate: -2, y: -4 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            className="rounded-2xl bg-gradient-to-b from-neutral-900 to-black text-white p-6 shadow-xl"
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <span className="h-2 w-2 rounded-full bg-green-500"></span>
+              <p className="text-sm opacity-80">Always know what you are getting</p>
+            </div>
+            <h4 className="text-xl font-medium leading-tight">
+              Development services<br/>for people who move fast.
+            </h4>
+          </motion.div>
+          
+          {/* White Card */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="p-4 rounded-2xl border border-gray-200 shadow-sm bg-white"
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <FiZap className="text-yellow-500" size={16} />
+              <span className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></span>
+              <p className="text-sm text-gray-500">Slots available</p>
+            </div>
+            <h4 className="text-lg font-medium mb-1">Hire us today</h4>
+            <p className="text-gray-500 text-sm">
+              Skip the typical agency markup and work directly with a team of experienced developers.
+            </p>
+          </motion.div>
+        </motion.div>
+
+        {/* Middle + Right Column: Build Your App */}
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="md:col-span-2"
+        >
+          <div className="rounded-2xl border border-gray-200 p-8 bg-white shadow-sm">
+            <h4 className="text-2xl font-medium mb-2">Build Your App</h4>
+            <p className="text-gray-500 text-sm mb-6">
+              Different apps would have different levels of complexity. Consult us about pricing with your specific requirements.
+            </p>
+            
+            {/* Price */}
+            <div className="mb-6">
+              <h2 className="text-4xl font-semibold mb-1">$1K-50K</h2>
+              <p className="text-sm text-gray-500">USD</p>
+            </div>
+            
+            {/* Features Grid */}
+            <ul className="grid md:grid-cols-2 gap-3 text-sm text-gray-600 mb-8">
+              {features.map((feature, i) => (
+                <motion.li 
+                  key={i}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-start gap-2"
+                >
+                  <FiCheck className="text-green-500 mt-0.5 flex-shrink-0" size={16} />
+                  <span>{feature}</span>
+                </motion.li>
+              ))}
+            </ul>
+            
+            {/* CTA Button */}
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors font-medium"
+            >
+              Get Started
+            </motion.button>
+          </div>
+        </motion.div>
+        
       </div>
     </section>
   )

@@ -59,7 +59,7 @@ export default function MeetFounder() {
         url="https://ragspro.com/meet-founder"
       />
       
-      <main className="min-h-screen bg-black pt-20">
+      <main className="min-h-screen bg-white pt-20">
         {/* Hero Section */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-6xl">
@@ -137,7 +137,7 @@ export default function MeetFounder() {
         </section>
 
         {/* Achievements */}
-        <section className="py-16 bg-gray-900/50">
+        <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 max-w-6xl">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -200,7 +200,7 @@ export default function MeetFounder() {
         </section>
 
         {/* Featured Projects */}
-        <section className="py-16 bg-gray-900/50">
+        <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 max-w-6xl">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
