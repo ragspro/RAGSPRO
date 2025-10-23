@@ -25,7 +25,7 @@ export default function Footer() {
           <h2 className="text-[44px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-normal leading-[1.1] sm:leading-[0.7] md:leading-[0.6] tracking-tight">
             <span className="text-white flex items-baseline relative z-20">
               <span className="text-white font-normal mr-4">Let's </span>
-              <span className="inline-block relative overflow-hidden h-[1.2em] min-w-[120px] sm:min-w-[160px] md:min-w-[200px] align-baseline" style={{transform: 'translateY(2px)'}}>
+              <span className="inline-block relative overflow-hidden h-[1.2em] min-w-[120px] sm:min-w-[160px] md:min-w-[200px] align-baseline" style={{transform: 'translateY(6px)'}}>
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentWord}
