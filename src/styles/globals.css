@@ -439,8 +439,9 @@ ack Logos Animation */
 
 .expand-button-large:hover {
   transform: scaleX(3.3);
-}/
-* Mobile Optimizations */
+}
+
+/* Mobile Optimizations */
 @media (max-width: 640px) {
   .tech-logos-scroll {
     animation: scrollLogos 20s linear infinite;
