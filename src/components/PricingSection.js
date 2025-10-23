@@ -158,7 +158,7 @@ export default function PricingSection() {
 
           {/* Right Column - Pricing Card */}
           <div className="space-y-6 mt-28">
-            <div className="text-gray-600 text-xl font-medium leading-relaxed -mt-28 ml-8">
+            <div className="text-gray-600 text-lg md:text-xl font-medium leading-relaxed -mt-28 ml-0 md:ml-8 text-center md:text-left">
               <div>Clear costs, no hidden fees.</div>
               <div>Select from monthly subscriptions or</div>
               <div>individual project rates.</div>

@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 const testimonials = [
   {
@@ -29,25 +30,89 @@ const testimonials = [
     role: "Product Manager at TechCorp",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
     rating: 5
+  },
+  {
+    quote: "In just one week, RAGSPRO's team automated our business processes—eliminating manual work and dramatically boosting efficiency. Highly recommend for business automation!",
+    author: "Vikram Mehta",
+    role: "CEO of Business Solutions",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+    rating: 5
+  },
+  {
+    quote: "RAGSPRO delivered an exceptional e-commerce platform for my business. Their attention to detail and quick turnaround time exceeded my expectations. Highly professional team!",
+    author: "Ananya Gupta",
+    role: "Founder of StyleHub",
+    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    rating: 5
   }
 ]
 
 
 
 export default function TestimonialsSection() {
+  const [showAllTestimonials, setShowAllTestimonials] = useState(false)
+
   return (
-    <section id="testimonials" className="py-32 bg-[#fafafa]">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-16">
+    <>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+        `
+      }} />
+    <section id="testimonials" className="pt-0 pb-4 md:py-32 bg-[#fafafa]">
+      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 -mt-6 md:mt-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-12 ml-0 md:ml-8"
+          className="-mb-6 md:mb-12 ml-0 md:ml-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-black">Hear from what the<br />founders have to say.</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-black">Hear from what the<br />founders have to say.</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ml-0 md:ml-8 mt-16">
+        {/* Mobile: Horizontal Slider */}
+        <div className="md:hidden overflow-hidden mt-2">
+          <div 
+            className="flex gap-4"
+            style={{
+              animation: 'scroll 25s linear infinite',
+              animationPlayState: 'running'
+            }}
+            onTouchStart={(e) => e.currentTarget.style.animationPlayState = 'paused'}
+            onTouchEnd={(e) => e.currentTarget.style.animationPlayState = 'running'}
+          >
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-white p-3 rounded-xl shadow-lg min-w-[280px] max-w-[280px] flex-shrink-0"
+              >
+                <div className="flex items-center gap-1 mb-2">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-3 italic text-sm">"{testimonial.quote}"</p>
+                <div className="flex items-center gap-3">
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.author}
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
+                  <div>
+                    <h4 className="font-semibold text-black text-sm">{testimonial.author}</h4>
+                    <p className="text-xs text-gray-500">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: Normal Grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 ml-0 md:ml-8 mt-16">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -78,5 +143,6 @@ export default function TestimonialsSection() {
         </div>
       </div>
     </section>
+    </>
   )
 }

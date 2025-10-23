@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import FAQItem from './FAQItem'
 
 const teamMembers = [
@@ -12,12 +13,53 @@ const teamMembers = [
 ]
 
 export default function TeamSection() {
+  const [expandedTestimonial, setExpandedTestimonial] = useState(null)
+
+  const testimonials = [
+    {
+      quote: "My business was struggling to get online presence, RAGSPRO's team really helped me establish digital presence and started generating leads consistently.",
+      name: "Rajesh Kumar",
+      title: "Founder of Digital Solutions (50K+ followers)",
+      avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      quote: "While building my startup, I worked with RAGSPRO's team to build my web application. They delivered super fast, saved me thousands in development costs.",
+      name: "Priya Sharma",
+      title: "CEO of TechStart India",
+      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      quote: "RAGSPRO has been an incredible long-term partner for us. When we were considering starting our mobile app, we ultimately chose RAGSPRO for their unbeatable turnaround times and competitive pricing.",
+      name: "Amit Singh",
+      title: "CEO of StartupHub",
+      avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      quote: "RAGSPRO's team has been a game-changer—helped me deliver 3+ UI/UX projects, sharpen my product management skills, and land amazing tech roles.",
+      name: "Sneha Patel",
+      title: "Product Manager at TechCorp",
+      avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      quote: "In just one week, RAGSPRO's team automated our business processes—eliminating manual work and dramatically boosting efficiency. Highly recommend for business automation!",
+      name: "Vikram Mehta",
+      title: "CEO of Business Solutions",
+      avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      quote: "RAGSPRO delivered an exceptional e-commerce platform for my business. Their attention to detail and quick turnaround time exceeded my expectations. Highly professional team!",
+      name: "Ananya Gupta",
+      title: "Founder of StyleHub",
+      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
+    }
+  ]
+
   return (
     <section id="team" className="pt-10 sm:pt-20 pb-16 sm:pb-32 bg-white">
       <div className="max-w-7xl mx-auto px-8">
         {/* Section Header */}
         <div className="text-left mb-12 -mt-8">
-          <h2 className="text-5xl md:text-6xl font-medium tracking-tight mb-8">
+          <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-8">
             <span className="text-gray-500">Developing SaaS</span>
             <br />
             <span className="text-black">that solve real problems.</span>
@@ -129,12 +171,12 @@ export default function TeamSection() {
 
         {/* Testimonials Section */}
         <div id="testimonials" className="mt-56">
-          <h3 className="text-5xl md:text-6xl font-medium mb-36">
+          <h3 className="text-4xl md:text-6xl font-medium mb-36">
             <span className="text-gray-500">Hear from what the</span><br />
             <span className="text-black">founders have to say.</span>
           </h3>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-5xl">
             {[
               {
                 quote: "My business was struggling to get online presence, RAGSPRO's team really helped me establish digital presence and started generating leads consistently.",
@@ -175,7 +217,7 @@ export default function TeamSection() {
             ].map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white/70 backdrop-blur-md p-4 rounded-3xl shadow-lg border border-white/30 hover:shadow-xl hover:bg-white/85 transition-all max-w-xs"
+                className="bg-white/70 backdrop-blur-md p-3 md:p-4 rounded-2xl md:rounded-3xl shadow-lg border border-white/30 hover:shadow-xl hover:bg-white/85 transition-all max-w-xs"
               >
                 {/* Black Stars */}
                 <div className="flex gap-0.5 mb-3">

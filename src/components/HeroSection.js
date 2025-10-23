@@ -81,7 +81,7 @@ export default function HeroSection() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-[28px] sm:text-[24px] md:text-[32px] lg:text-[48px] xl:text-[68px] font-normal leading-[1.05] tracking-tight mb-3 sm:mb-3 md:mb-6">
+            <h1 className="text-[44px] sm:text-[24px] md:text-[32px] lg:text-[48px] xl:text-[68px] font-normal leading-[1.05] tracking-tight mb-3 sm:mb-3 md:mb-6">
               <span className="text-gray-400">We build your</span>
               <br />
               <span className="text-black">startup in 20 days.</span>
@@ -99,7 +99,7 @@ export default function HeroSection() {
                 const event = new CustomEvent('openQuoteForm')
                 window.dispatchEvent(event)
               }}
-              className="group inline-flex items-center gap-2 sm:gap-2 md:gap-3 lg:gap-4 px-2 sm:px-2 md:px-3 lg:px-4 py-2 sm:py-1.5 md:py-2 lg:py-2.5 bg-black text-white rounded-full font-medium hover:bg-gray-900 hover:scale-105 transition-all duration-300 shadow-lg mb-6 sm:mb-6 md:mb-8 lg:mb-16 text-[10px] sm:text-[10px] md:text-xs lg:text-sm mt-8 sm:mt-6"
+              className="group inline-flex items-center gap-2 sm:gap-2 md:gap-3 lg:gap-4 px-2 sm:px-2 md:px-3 lg:px-4 py-2 sm:py-1.5 md:py-2 lg:py-2.5 bg-black text-white rounded-full font-medium hover:bg-gray-900 hover:scale-105 transition-all duration-300 shadow-lg mb-6 sm:mb-6 md:mb-8 lg:mb-16 text-[10px] sm:text-[10px] md:text-xs lg:text-sm mt-4 sm:mt-6"
             >
               <div className="flex -space-x-0.5 sm:-space-x-1 md:-space-x-2 relative">
                 {/* User 1 Circle */}
@@ -130,7 +130,7 @@ export default function HeroSection() {
             </button>
 
             {/* Social Proof - Compact for mobile */}
-            <div className="flex items-center gap-2 sm:gap-1 md:gap-2 mb-3 sm:mb-4 md:mb-8 lg:mb-12 mt-2 sm:mt-0">
+            <div className="flex items-center gap-2 sm:gap-1 md:gap-2 mb-3 sm:mb-4 md:mb-8 lg:mb-12 -mt-2 sm:mt-0">
               <div className="flex -space-x-0.5">
                 <div className="w-3 sm:w-3 md:w-4 lg:w-5 h-3 sm:h-3 md:h-4 lg:h-5 rounded-full overflow-hidden border border-white">
                   <img
