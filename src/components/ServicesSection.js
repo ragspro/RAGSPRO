@@ -120,7 +120,7 @@ ${formData.message}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 lg:gap-24 items-center">
           {/* LEFT: Heading */}
-          <div>
+          <div className="pt-20 sm:pt-0">
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-normal tracking-tight leading-[1.15]">
               <span className="text-gray-400">Services that</span>
               <br />
@@ -131,7 +131,7 @@ ${formData.message}
           </div>
 
           {/* RIGHT: Services List */}
-          <div className="space-y-4 sm:space-y-6 md:space-y-8">
+          <div className="space-y-4 sm:space-y-6 md:space-y-8 pt-8 sm:pt-0 pl-20 sm:pl-0">
             {services.map((service, i) => (
               <div
                 key={service.title}
@@ -203,13 +203,25 @@ ${formData.message}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-0 h-full w-full max-w-sm sm:max-w-md bg-white shadow-2xl z-50 overflow-y-auto flex items-center justify-center"
+              className="fixed right-0 top-0 h-full w-full max-w-xs sm:max-w-md bg-white shadow-2xl z-50 overflow-y-auto flex items-center justify-center"
             >
-              <div className="p-4 sm:p-6 w-full max-w-sm mx-auto">
+              <div className="p-3 sm:p-6 w-full max-w-xs sm:max-w-sm mx-auto">
                 {/* Close Button */}
                 <button
-                  onClick={() => setShowQuoteForm(false)}
-                  className="absolute top-4 right-4 text-gray-400 hover:text-black text-2xl font-light"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setShowQuoteForm(false)
+                    setIsSubmitted(false)
+                    setFormData({
+                      name: '',
+                      email: '',
+                      phone: '',
+                      projectType: '',
+                      message: '',
+                      budget: ''
+                    })
+                  }}
+                  className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-gray-400 hover:text-black hover:bg-gray-100 rounded-full text-xl font-light transition-all duration-200 z-50 cursor-pointer"
                 >
                   ×
                 </button>
