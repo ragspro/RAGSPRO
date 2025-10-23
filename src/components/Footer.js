@@ -25,7 +25,7 @@ export default function Footer() {
           <h2 className="text-[44px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-normal leading-[1.1] sm:leading-[0.7] md:leading-[0.6] tracking-tight">
             <span className="text-white flex items-baseline relative z-20">
               <span className="text-white font-normal mr-4">Let's </span>
-              <span className="inline-block relative overflow-hidden h-[1.2em] min-w-[120px] sm:min-w-[160px] md:min-w-[200px] align-baseline">
+              <span className="inline-block relative overflow-hidden h-[1.2em] min-w-[120px] sm:min-w-[160px] md:min-w-[200px] align-baseline" style={{transform: 'translateY(2px)'}}>
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentWord}
@@ -53,7 +53,8 @@ export default function Footer() {
                       opacity: { duration: 0.2 },
                       filter: { duration: 0.3 }
                     }}
-                    className="absolute inset-0 flex items-baseline text-white font-normal"
+                    className="absolute inset-0 flex items-center text-white font-normal"
+                    style={{ transform: 'translateY(36px)' }}
                   >
                     {words[currentWord]}
                   </motion.span>
