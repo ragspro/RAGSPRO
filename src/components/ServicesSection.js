@@ -205,7 +205,7 @@ ${formData.message}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
               className="fixed right-0 top-0 h-full w-full max-w-xs sm:max-w-md bg-white shadow-2xl z-50 overflow-y-auto flex items-center justify-center"
             >
-              <div className="p-3 sm:p-6 w-full max-w-xs sm:max-w-sm mx-auto">
+              <div className="p-3 sm:p-6 w-full max-w-xs sm:max-w-sm mx-auto relative">
                 {/* Close Button */}
                 <button
                   onClick={(e) => {
