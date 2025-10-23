@@ -62,18 +62,18 @@ export default function FloatingBrand() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="fixed top-4 z-[9999] w-full flex justify-center px-4"
+        className="fixed top-2 md:top-4 z-[9999] w-full flex justify-center px-2 md:px-4"
       >
         <motion.div
           animate={{
             scale: isExpanded ? 1 : 0.95,
-            paddingLeft: isExpanded ? '16px' : '12px',
-            paddingRight: isExpanded ? '16px' : '12px',
-            paddingTop: isExpanded ? '12px' : '8px',
-            paddingBottom: isExpanded ? '12px' : '8px',
+            paddingLeft: isExpanded ? '8px' : '6px',
+            paddingRight: isExpanded ? '8px' : '6px',
+            paddingTop: isExpanded ? '6px' : '4px',
+            paddingBottom: isExpanded ? '6px' : '4px',
           }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="bg-white/10 backdrop-blur-2xl rounded-full shadow-2xl flex items-center gap-3 border border-white/20"
+          className="bg-white/10 backdrop-blur-2xl rounded-full shadow-2xl flex items-center gap-1 md:gap-3 border border-white/20 mobile-scale-30"
           style={{
             backdropFilter: 'blur(40px)',
             WebkitBackdropFilter: 'blur(40px)',
@@ -84,9 +84,9 @@ export default function FloatingBrand() {
           {/* Logo - Always Visible */}
           <button
             onClick={() => router.push('/')}
-            className="flex items-center gap-3 flex-shrink-0 hover:opacity-80 transition-opacity duration-300"
+            className="flex items-center gap-1 md:gap-3 flex-shrink-0 hover:opacity-80 transition-opacity duration-300"
           >
-            <div className="w-8 h-8 rounded-full overflow-hidden bg-white flex items-center justify-center">
+            <div className="w-4 h-4 md:w-6 md:h-6 rounded-full overflow-hidden bg-white flex items-center justify-center">
               <Image
                 src="/images/logo.png"
                 alt="RAGSPRO Logo"
@@ -95,7 +95,9 @@ export default function FloatingBrand() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <span className="font-bold text-black text-lg">RAGSPRO</span>
+            <span className="font-bold text-black text-xs md:text-sm">
+              RAGSPRO
+            </span>
           </button>
 
           <AnimatePresence>
@@ -117,7 +119,7 @@ export default function FloatingBrand() {
                     ease: [0.4, 0, 0.6, 1],
                     delay: 0,
                   }}
-                  className="w-1 h-1 bg-black rounded-full"
+                  className="w-0.5 h-0.5 md:w-1 md:h-1 bg-black rounded-full"
                 />
                 <motion.span
                   animate={{
@@ -129,7 +131,7 @@ export default function FloatingBrand() {
                     ease: [0.4, 0, 0.6, 1],
                     delay: 0.3,
                   }}
-                  className="w-1 h-1 bg-black rounded-full"
+                  className="w-0.5 h-0.5 md:w-1 md:h-1 bg-black rounded-full"
                 />
                 <motion.span
                   animate={{
@@ -141,13 +143,13 @@ export default function FloatingBrand() {
                     ease: [0.4, 0, 0.6, 1],
                     delay: 0.6,
                   }}
-                  className="w-1 h-1 bg-black rounded-full"
+                  className="w-0.5 h-0.5 md:w-1 md:h-1 bg-black rounded-full"
                 />
               </motion.div>
             )}
           </AnimatePresence>
 
-          {/* Desktop Navigation Links - Show when expanded */}
+          {/* Navigation Links - Show when expanded */}
           <AnimatePresence>
             {isExpanded && (
               <motion.div
@@ -155,20 +157,20 @@ export default function FloatingBrand() {
                 animate={{ opacity: 1, width: 'auto' }}
                 exit={{ opacity: 0, width: 0 }}
                 transition={{ duration: 0.3 }}
-                className="hidden md:flex items-center gap-6 pl-4 ml-4 border-l border-gray-200"
+                className="flex items-center gap-1 md:gap-4 pl-1 md:pl-3 ml-1 md:ml-3 border-l border-gray-200"
               >
                 {navLinks.map((link) => (
                   <button
                     key={link.name}
                     onClick={() => handleNavClick(link.href, link.isExternal, link.name)}
-                    className="text-sm font-medium text-gray-700 hover:text-black transition-colors whitespace-nowrap"
+                    className="text-xs md:text-sm font-medium text-gray-700 hover:text-black transition-colors whitespace-nowrap"
                   >
                     {link.name}
                   </button>
                 ))}
                 <button
                   onClick={() => handleNavClick('/#contact', true)}
-                  className="text-sm font-medium text-black hover:text-gray-700 transition-colors whitespace-nowrap"
+                  className="text-xs md:text-sm font-medium text-black hover:text-gray-700 transition-colors whitespace-nowrap"
                 >
                   Still not sure?
                 </button>

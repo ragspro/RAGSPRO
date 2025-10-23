@@ -14,10 +14,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        // Exact Benji.app color system
+        // Custom color system
         background: '#ffffff',
         foreground: '#000000',
-        accent: '#21b30b', // Exact benji.app green
+        accent: '#21b30b', // Brand green
         'accent-hover': '#1a9609',
         gray: {
           50: '#fafafa',

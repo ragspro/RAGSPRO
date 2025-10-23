@@ -13,7 +13,7 @@ const teamMembers = [
 
 export default function TeamSection() {
   return (
-    <section id="team" className="pt-20 pb-32 bg-white">
+    <section id="team" className="pt-10 sm:pt-20 pb-16 sm:pb-32 bg-white">
       <div className="max-w-7xl mx-auto px-8">
         {/* Section Header */}
         <div className="text-left mb-12 -mt-8">
@@ -220,9 +220,9 @@ export default function TeamSection() {
           </h3>
 
           {/* Two Column Layout */}
-          <div className="grid lg:grid-cols-3 gap-8 mt-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mt-8 sm:mt-12 lg:mt-16">
             {/* FAQ Column - Left Side */}
-            <div className="lg:col-span-2 space-y-3 max-w-md ml-16">
+            <div className="lg:col-span-2 space-y-2 sm:space-y-3 max-w-full lg:max-w-md ml-0 lg:ml-16">
               {[
                 {
                   question: "What types of apps do you build?",
@@ -250,21 +250,21 @@ export default function TeamSection() {
             </div>
 
             {/* CTA Card - Right Side */}
-            <div className="lg:col-span-1 -mt-48 -ml-48 mr-16">
+            <div className="lg:col-span-1 mt-4 lg:-mt-48 ml-0 lg:-ml-48 mr-0 lg:mr-16">
               <div className="lg:sticky lg:-top-64">
-                <div className="bg-white p-10 rounded-xl border border-gray-200 shadow-lg min-h-[320px] max-w-sm">
+                <div className="bg-white p-4 sm:p-6 lg:p-10 rounded-lg sm:rounded-xl border border-gray-200 shadow-lg min-h-[280px] sm:min-h-[320px] max-w-full lg:max-w-sm">
                   {/* Avatar */}
                   <div className="mb-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-black to-gray-700 flex items-center justify-center text-white text-xl font-bold">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-black to-gray-700 flex items-center justify-center text-white text-lg sm:text-xl font-bold">
                       RS
                     </div>
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-3xl font-bold text-gray-500 mb-1">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-500 mb-1">
                     Still not sure?
                   </h3>
-                  <p className="text-black font-semibold mb-3 text-xl">
+                  <p className="text-black font-semibold mb-3 text-lg sm:text-xl">
                     Book a free discovery call.
                   </p>
                   <p className="text-gray-600 mb-4 leading-relaxed text-sm">

@@ -48,7 +48,7 @@ export default function CustomCircleCursor() {
   return (
     <div
       ref={cursorRef}
-      className="benji-cursor opacity-0"
+      className="custom-circle-cursor opacity-0"
     />
   )
 }

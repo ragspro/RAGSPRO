@@ -3,7 +3,7 @@ import HeroSection from '../components/HeroSection'
 import FloatingProjects from '../components/FloatingProjects'
 import ServicesSection from '../components/ServicesSection'
 import ProjectsSection from '../components/ProjectsSection'
-import BenjiPricingSection from '../components/BenjiPricingSection'
+import PricingSection from '../components/PricingSection'
 import ContactSection from '../components/ContactSection'
 import TeamSection from '../components/TeamSection'
 import CustomCursor from '../components/CustomCursor'
@@ -24,7 +24,7 @@ export default function Home() {
       <div className="page-canvas">
         <ServicesSection />
         <SectionDivider />
-        <BenjiPricingSection />
+        <PricingSection />
         <SectionDivider />
         <TeamSection />
         <SectionDivider />

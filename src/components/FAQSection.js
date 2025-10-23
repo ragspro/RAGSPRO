@@ -1,163 +1,163 @@
-'use client'
-import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { FiPlus, FiMinus } from 'react-icons/fi'
 
-const faqs = [
+const faqData = [
   {
+    id: 1,
     question: "What types of apps do you build?",
     answer: "We specialize in building web applications, mobile apps, AI-powered tools, and custom software solutions. Our expertise spans React, Next.js, Node.js, and modern AI technologies."
   },
   {
-    question: "How long does it take to build an app?",
+    id: 2,
+    question: "How long does a typical project take?",
     answer: "Project timelines vary based on complexity. Simple websites take 2-4 weeks, while complex applications can take 2-6 months. We provide detailed timelines during our discovery phase."
   },
   {
-    question: "What is your development process?",
+    id: 3,
+    question: "Do you provide ongoing support and maintenance?",
+    answer: "Yes, we offer comprehensive support packages including bug fixes, updates, security patches, and feature enhancements to keep your application running smoothly."
+  },
+  {
+    id: 4,
+    question: "What's your development process like?",
     answer: "We follow an agile methodology with regular check-ins, transparent communication, and iterative development. You'll have full visibility into progress and can provide feedback at every stage."
   },
   {
-    question: "How much does it cost to build an app?",
-    answer: "App development costs vary widely based on features, complexity, and platforms. We provide custom quotes tailored to your specific project requirements after our initial consultation."
-  },
-  {
-    question: "Do you provide ongoing maintenance and support?",
-    answer: "Yes, we offer ongoing maintenance and support services to ensure your app continues to perform optimally after launch. This includes bug fixes, performance optimizations, feature updates, and compatibility with new OS versions. We offer flexible maintenance packages tailored to your needs."
+    id: 5,
+    question: "Can you help with AI integration and automation?",
+    answer: "Absolutely! We specialize in AI integration, chatbots, automation workflows, and custom AI solutions to help streamline your business processes and enhance user experiences."
   }
 ]
 
-export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState(null)
+const FAQSection = () => {
+  const [openFAQ, setOpenFAQ] = useState(null)
+
+  const toggleFAQ = (id) => {
+    setOpenFAQ(openFAQ === id ? null : id)
+  }
 
   return (
-    <section id="faq" className="py-20 bg-black">
-      <div className="container mx-auto px-4 max-w-7xl">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Your questions <span className="text-gradient">answered.</span>
+    <section className="py-10 sm:py-16 md:py-20 bg-white">
+      <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
+        {/* Section Header */}
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-black mb-4">
+            Your questions answered.
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Everything you need to know about working with us
-          </p>
-        </motion.div>
+        </div>
 
         {/* Two Column Layout */}
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* FAQ Column - Left Side */}
-          <div className="lg:col-span-2 space-y-4">
-            {faqs.map((faq, index) => (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16">
+          {/* Left Side - FAQ List */}
+          <div className="space-y-3 sm:space-y-4">
+            {faqData.map((faq, index) => (
               <motion.div
-                key={index}
+                key={faq.id}
+                className="bg-gray-50 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 cursor-pointer transition-all duration-300 hover:bg-gray-100"
+                onClick={() => toggleFAQ(faq.id)}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-colors"
               >
-                <button
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors"
-                >
-                  <div className="flex items-start gap-4 flex-1">
-                    <span className="text-accent font-bold text-lg mt-1">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                    <span className="text-white font-semibold text-lg">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3">
+                      <span className="text-xs sm:text-sm font-medium text-gray-500 bg-white px-2 sm:px-3 py-1 rounded-full">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                    </div>
+                    <h3 className="text-sm sm:text-base md:text-lg font-bold text-black mb-2">
                       {faq.question}
-                    </span>
+                    </h3>
+                    
+                    <AnimatePresence>
+                      {openFAQ === faq.id && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="overflow-hidden"
+                        >
+                          <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed pt-2">
+                            {faq.answer}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                  <div className="text-accent text-2xl ml-4">
-                    {openIndex === index ? <FiMinus /> : <FiPlus />}
-                  </div>
-                </button>
-                
-                <AnimatePresence>
-                  {openIndex === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-5 pl-20">
-                        <p className="text-gray-400 leading-relaxed">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                  
+                  <motion.button
+                    className="ml-2 sm:ml-3 md:ml-4 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full bg-white flex items-center justify-center text-gray-600 hover:bg-black hover:text-white transition-all duration-300"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {openFAQ === faq.id ? (
+                      <FiMinus size={16} />
+                    ) : (
+                      <FiPlus size={16} />
+                    )}
+                  </motion.button>
+                </div>
               </motion.div>
             ))}
           </div>
 
-          {/* CTA Card - Right Side */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-1"
-          >
-            <div className="lg:sticky lg:top-24">
-              <div className="glass-card p-8 rounded-2xl border border-gray-800">
-                {/* Avatar */}
-                <div className="mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent to-purple-600 flex items-center justify-center text-white text-2xl font-bold">
-                    RS
-                  </div>
+          {/* Right Side - CTA Card */}
+          <div className="lg:pl-8">
+            <motion.div
+              className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-lg border border-gray-100 sticky top-8"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              {/* User Photo */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                  <span className="text-white font-bold text-sm sm:text-base md:text-lg">R</span>
                 </div>
-
-                {/* Content */}
-                <h3 className="text-2xl font-bold text-white mb-2">
-                  Still not sure?
-                </h3>
-                <p className="text-accent font-semibold mb-4">
-                  Book a free discovery call
-                </p>
-                <p className="text-gray-400 mb-6 leading-relaxed">
-                  Let's discuss your project requirements and explore how we can bring your vision to life. No commitment required.
-                </p>
-
-                {/* CTA Button */}
-                <a
-                  href="#contact"
-                  className="block w-full bg-accent hover:bg-accent/90 text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors mb-6"
-                >
-                  Schedule Now
-                </a>
-
-                {/* Trust Indicators */}
-                <div className="space-y-3 pt-6 border-t border-gray-800">
-                  <div className="flex items-center gap-3 text-sm text-gray-400">
-                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>30-minute free consultation</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-gray-400">
-                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>No obligation quote</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-gray-400">
-                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>Response within 24 hours</span>
-                  </div>
+                <div>
+                  <p className="text-sm text-gray-500 font-medium">Raghav Shah</p>
+                  <p className="text-xs text-gray-400">Founder & Developer</p>
                 </div>
               </div>
-            </div>
-          </motion.div>
+
+              {/* Content */}
+              <div className="mb-8">
+                <p className="text-gray-500 text-sm sm:text-base md:text-lg mb-2">Still not sure?</p>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-black mb-4">
+                  Book a free discovery call.
+                </h3>
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                  Learn more about how we work and how we can help you and your startup build amazing digital products.
+                </p>
+              </div>
+
+              {/* CTA Button */}
+              <motion.button
+                className="w-full bg-black text-white py-3 sm:py-4 px-4 sm:px-6 rounded-xl sm:rounded-2xl font-semibold text-sm sm:text-base md:text-lg hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => window.open('https://calendly.com/ragsproai', '_blank')}
+              >
+                Schedule Now
+              </motion.button>
+
+              {/* Additional Info */}
+              <div className="mt-6 pt-6 border-t border-gray-100">
+                <div className="flex items-center justify-between text-sm text-gray-500">
+                  <span>✓ 30-minute call</span>
+                  <span>✓ No commitment</span>
+                  <span>✓ Free consultation</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
   )
 }
+
+export default FAQSection

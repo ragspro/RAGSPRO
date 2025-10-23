@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Using system font stack to match Benji.app */
+/* Using system font stack */
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -45,7 +45,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Benji-style typography */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.1;
@@ -127,7 +127,7 @@ p {
   padding: 0 1.5rem;
 }
 
-/* Benji Animations - Fast in, slow out */
+/* Animations - Fast in, slow out */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -143,11 +143,11 @@ p {
   animation: fadeInUp 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
 }
 
-.benji-ease {
+.smooth-ease {
   transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.benji-ease-fast {
+.smooth-ease-fast {
   transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -194,7 +194,7 @@ p {
   color: rgb(var(--foreground-rgb));
 }
 
-/* Benji Typography */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 700;
@@ -208,30 +208,44 @@ body, p, span, div {
   color: #000;
 }
 
-/* Benji Sections */
-.benji-section {
+/* Main Sections */
+.main-section {
   padding-top: 120px;
   padding-bottom: 120px;
   border-bottom: 1px solid #e5e5e5;
 }
 
+@media (max-width: 1024px) {
+  .main-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
 @media (max-width: 768px) {
-  .benji-section {
+  .main-section {
     padding-top: 80px;
     padding-bottom: 80px;
   }
 }
 
-/* Benji Colors */
-.text-benji {
+@media (max-width: 640px) {
+  .main-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+/* Brand Colors */
+.text-brand {
   color: #000;
 }
 
-.bg-benji {
+.bg-brand {
   background-color: #fff;
 }
 
-.border-benji {
+.border-brand {
   border-color: #e5e5e5;
 }
 
@@ -256,19 +270,19 @@ body, p, span, div {
 }
 
 /* Shadow Elevations */
-.shadow-benji-sm {
+.shadow-custom-sm {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.shadow-benji-md {
+.shadow-custom-md {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.shadow-benji-lg {
+.shadow-custom-lg {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-.shadow-benji-xl {
+.shadow-custom-xl {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
@@ -278,7 +292,7 @@ body, p, span, div {
   min-height: 200vh;
 }
 
-/* Page Rails (subtle vertical lines like Benji.app) */
+/* Page Rails (subtle vertical lines) */
 .page-rails {
   position: relative;
 }
@@ -307,7 +321,7 @@ body, p, span, div {
   margin-right: auto;
   background: #ffffff;
   position: relative;
-  /* Subtle grid lines like Benji.app, constrained inside rails */
+  /* Subtle grid lines, constrained inside rails */
   background-image:
     repeating-linear-gradient(
       to bottom,
@@ -425,4 +439,179 @@ ack Logos Animation */
 
 .expand-button-large:hover {
   transform: scaleX(3.3);
+}/
+* Mobile Optimizations */
+@media (max-width: 640px) {
+  .tech-logos-scroll {
+    animation: scrollLogos 20s linear infinite;
+    gap: 1.5rem !important;
+  }
+  
+  /* Reduce motion for mobile */
+  .project-card {
+    transform: none !important;
+  }
+  
+  /* Better touch targets */
+  button, .cursor-pointer {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .hover\:scale-110:hover {
+    transform: none;
+  }
+  
+  .hover\:scale-105:hover {
+    transform: none;
+  }
+  
+  .group:hover .group-hover\:scale-110 {
+    transform: none;
+  }
+  
+  .group:hover .group-hover\:scale-100 {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* iPad and tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .main-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}/* Custom 
+mobile scale for FloatingBrand */
+@media (max-width: 767px) {
+  .mobile-scale-30 {
+    transform: scale(0.8) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-scale-30 {
+    transform: scale(1);
+  }
+}/* 
+Responsive Design Fixes for Consistent Rendering */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Prevent horizontal scroll on all devices */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Ensure consistent box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Fix for iOS Safari viewport units */
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Prevent zoom on input focus (iOS) */
+input, select, textarea {
+  font-size: 16px !important;
+}
+
+/* Consistent font rendering across browsers */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fix for Windows high DPI displays */
+@media screen and (-webkit-min-device-pixel-ratio: 1.25), 
+       screen and (min-resolution: 120dpi) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+/* Responsive container max-widths */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+/* Fix for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .hover\:scale-105:hover {
+    transform: none;
+  }
+  
+  .hover\:bg-black:hover {
+    background-color: inherit;
+  }
+}
+
+/* Ensure consistent viewport behavior */
+@viewport {
+  width: device-width;
+  initial-scale: 1;
+  maximum-scale: 5;
+  user-scalable: yes;
 }

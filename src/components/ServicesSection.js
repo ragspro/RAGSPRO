@@ -116,12 +116,12 @@ ${formData.message}
   }, [])
 
   return (
-    <section id="services" className="relative min-h-screen bg-white py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="grid lg:grid-cols-2 gap-24 items-center">
+    <section id="services" className="relative min-h-screen bg-white py-8 sm:py-24 lg:py-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 lg:gap-24 items-center">
           {/* LEFT: Heading */}
           <div>
-            <h2 className="text-5xl md:text-6xl font-normal tracking-tight leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-normal tracking-tight leading-[1.15]">
               <span className="text-gray-400">Services that</span>
               <br />
               <span className="text-black">you need to start</span>
@@ -131,16 +131,16 @@ ${formData.message}
           </div>
 
           {/* RIGHT: Services List */}
-          <div className="space-y-8">
+          <div className="space-y-4 sm:space-y-6 md:space-y-8">
             {services.map((service, i) => (
               <div
                 key={service.title}
-                className="flex items-center gap-4"
+                className="flex items-center gap-2 sm:gap-3 md:gap-4"
               >
-                <div className="w-11 h-11 bg-black rounded-full flex items-center justify-center text-white flex-shrink-0">
-                  <service.icon className="text-lg" />
+                <div className="w-8 sm:w-10 md:w-11 h-8 sm:h-10 md:h-11 bg-black rounded-full flex items-center justify-center text-white flex-shrink-0">
+                  <service.icon className="text-base sm:text-lg" />
                 </div>
-                <h3 className="text-2xl font-normal text-black">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-normal text-black">
                   {service.title}
                 </h3>
               </div>
@@ -154,30 +154,30 @@ ${formData.message}
 
       {/* Floating Glass Buttons */}
       <div
-        className={`fixed bottom-6 left-[45%] z-40 transition-opacity duration-300 ${showButtons ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 transition-opacity duration-300 ${showButtons ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
       >
-        <div className="group bg-white/90 backdrop-blur-xl rounded-full p-1.5 shadow-xl border border-gray-200/50 flex gap-1.5">
+        <div className="group bg-white/90 backdrop-blur-xl rounded-full p-1 sm:p-1.5 shadow-xl border border-gray-200/50 flex gap-1 sm:gap-1.5 md:hover:gap-2">
           <a
             href="https://wa.me/918700048490?text=Hi%2C%20I%27m%20interested%20in%20your%20development%20services.%20Can%20we%20discuss%20my%20project%3F"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white text-black rounded-full flex items-center justify-center gap-2 px-3 py-3 hover:bg-black hover:text-white transition-all duration-300 border border-gray-200 w-12 group-hover:w-auto group-hover:px-4"
+            className="bg-white text-black rounded-full flex items-center justify-center gap-2 px-3 py-2 sm:py-3 hover:bg-black hover:text-white transition-all duration-300 border border-gray-200 w-auto md:w-10 md:sm:w-12 md:group-hover:w-auto md:group-hover:px-3 md:sm:group-hover:px-4"
             style={{ transformOrigin: 'center' }}
           >
-            <FaWhatsapp className="text-base flex-shrink-0 hover:text-white" />
-            <span className="font-medium text-sm whitespace-nowrap opacity-0 w-0 group-hover:opacity-100 group-hover:w-auto transition-all duration-300 overflow-hidden hover:text-white">
+            <FaWhatsapp className="text-sm sm:text-base flex-shrink-0 hover:text-white" />
+            <span className="font-medium text-sm whitespace-nowrap opacity-100 w-auto md:opacity-0 md:w-0 md:group-hover:opacity-100 md:group-hover:w-auto transition-all duration-300 overflow-hidden hover:text-white">
               WhatsApp
             </span>
           </a>
 
           <button
             onClick={() => setShowQuoteForm(true)}
-            className="bg-white text-black rounded-full flex items-center justify-center gap-2 px-3 py-3 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer border border-gray-200 w-12 group-hover:w-auto group-hover:px-4"
+            className="bg-white text-black rounded-full flex items-center justify-center gap-2 px-3 py-2 sm:py-3 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer border border-gray-200 w-auto md:w-10 md:sm:w-12 md:group-hover:w-auto md:group-hover:px-3 md:sm:group-hover:px-4"
             style={{ transformOrigin: 'center' }}
           >
-            <FaLightbulb className="text-base flex-shrink-0 hover:text-white" />
-            <span className="font-medium text-sm whitespace-nowrap opacity-0 w-0 group-hover:opacity-100 group-hover:w-auto transition-all duration-300 overflow-hidden hover:text-white">
+            <FaLightbulb className="text-sm sm:text-base flex-shrink-0 hover:text-white" />
+            <span className="font-medium text-sm whitespace-nowrap opacity-100 w-auto md:opacity-0 md:w-0 md:group-hover:opacity-100 md:group-hover:w-auto transition-all duration-300 overflow-hidden hover:text-white">
               Pitch us your idea
             </span>
           </button>
@@ -203,9 +203,9 @@ ${formData.message}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl z-50 overflow-y-auto flex items-center justify-center"
+              className="fixed right-0 top-0 h-full w-full max-w-sm sm:max-w-md bg-white shadow-2xl z-50 overflow-y-auto flex items-center justify-center"
             >
-              <div className="p-6 w-full max-w-sm mx-auto">
+              <div className="p-4 sm:p-6 w-full max-w-sm mx-auto">
                 {/* Close Button */}
                 <button
                   onClick={() => setShowQuoteForm(false)}

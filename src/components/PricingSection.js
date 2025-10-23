@@ -1,159 +1,218 @@
 'use client'
 import { motion } from 'framer-motion'
-import { FiCheck, FiZap } from 'react-icons/fi'
+import { useState } from 'react'
 
 export default function PricingSection() {
-  const steps = [
-    {
-      title: 'Request',
-      desc: 'Fill out our form and let us know what you want to build, literally anything.'
+  const [isHovered, setIsHovered] = useState(false)
+
+  const infoPoints = [
+    { 
+      icon: (
+        <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center shadow-lg">
+          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+          </svg>
+        </div>
+      ), 
+      title: 'Request', 
+      desc: 'Fill out our form and let us know what you want to build, literally anything.' 
     },
-    {
-      title: 'Meet the Team',
-      desc: 'Meet our developers and set up step-by-step clear roadmap for your startup.'
+    { 
+      icon: (
+        <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center shadow-lg">
+          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0z" />
+          </svg>
+        </div>
+      ), 
+      title: 'Meet the Team', 
+      desc: 'Meet our developers and set up step-by-step clear roadmap for your startup.' 
     },
-    {
-      title: 'Receive',
-      desc: 'Receive your app within 20 days.'
+    { 
+      icon: (
+        <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center shadow-lg">
+          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+          </svg>
+        </div>
+      ), 
+      title: 'Receive', 
+      desc: 'Receive your app within 20 days & launch' 
     }
   ]
 
   const features = [
-    'Fully designed User Interface',
-    'Highest level of data security', 
-    'All tech stack supported',
-    'Unlimited iteration process',
-    '20 days turnaround',
-    'Distribution to 150K subscribers'
+    'Custom Development',
+    'UI/UX Design',
+    'Mobile Responsive',
+    'API Integration',
+    'Database Setup',
+    'Deployment & Support'
   ]
 
   return (
-    <section id="pricing" className="w-full bg-white text-black py-20 px-6 md:px-16">
-      {/* 3-Step Process */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2 }}
-        className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mb-20"
-      >
-        {steps.map((step, i) => (
-          <motion.div
-            key={step.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="text-center"
-          >
-            <h3 className="text-xl font-bold text-black mb-2">{step.title}</h3>
-            <p className="text-gray-600">{step.desc}</p>
-          </motion.div>
-        ))}
-      </motion.div>
-
-      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 items-start">
-        
-        {/* Left Column: Steps + Cards */}
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="space-y-6"
-        >
-          <h3 className="text-5xl font-semibold leading-tight tracking-tight">
-            Simple pricing.<br/> 
-            <span className="text-gray-600">Standout SaaS.</span>
-          </h3>
-          <p className="text-gray-500">
-            Clear costs, no hidden fees. Select from monthly subscriptions or individual project rates.
-          </p>
+    <section id="pricing" className="pt-16 sm:pt-32 pb-10 sm:pb-20 bg-white">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           
-          {/* Black Gradient Card */}
-          <motion.div 
-            whileHover={{ rotate: -2, y: -4 }}
-            transition={{ type: "spring", stiffness: 200 }}
-            className="rounded-2xl bg-gradient-to-b from-neutral-900 to-black text-white p-6 shadow-xl"
-          >
-            <div className="flex items-center gap-2 mb-4">
-              <span className="h-2 w-2 rounded-full bg-green-500"></span>
-              <p className="text-sm opacity-80">Always know what you are getting</p>
+          {/* Left Column - Info */}
+          <div className="space-y-12">
+            {/* Headline */}
+            <div className="-mt-28">
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+                <div className="ml-8">
+                  <div className="text-4xl lg:text-5xl font-medium leading-tight">
+                    <div className="text-gray-500">Simple pricing.</div>
+                  </div>
+                  <div className="text-4xl lg:text-5xl font-medium leading-tight">
+                    <div className="relative text-black">
+                      Standout SaaS.
+                      <div className="absolute inset-0 bg-gray-200 -z-10 rounded-lg transform -rotate-1 opacity-60"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h4 className="text-xl font-medium leading-tight">
-              Development services<br/>for people who move fast.
-            </h4>
-          </motion.div>
-          
-          {/* White Card */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="p-4 rounded-2xl border border-gray-200 shadow-sm bg-white"
-          >
-            <div className="flex items-center gap-2 mb-2">
-              <FiZap className="text-yellow-500" size={16} />
-              <span className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></span>
-              <p className="text-sm text-gray-500">Slots available</p>
-            </div>
-            <h4 className="text-lg font-medium mb-1">Hire us today</h4>
-            <p className="text-gray-500 text-sm">
-              Skip the typical agency markup and work directly with a team of experienced developers.
-            </p>
-          </motion.div>
-        </motion.div>
 
-        {/* Middle + Right Column: Build Your App */}
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="md:col-span-2"
-        >
-          <div className="rounded-2xl border border-gray-200 p-8 bg-white shadow-sm">
-            <h4 className="text-2xl font-medium mb-2">Build Your App</h4>
-            <p className="text-gray-500 text-sm mb-6">
-              Different apps would have different levels of complexity. Consult us about pricing with your specific requirements.
-            </p>
-            
-            {/* Price */}
-            <div className="mb-6">
-              <h2 className="text-4xl font-semibold mb-1">$1K-50K</h2>
-              <p className="text-sm text-gray-500">USD</p>
+            {/* Info Points - Centered */}
+            <div className="flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
+                {infoPoints.map((point, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center text-center space-y-4"
+                  >
+                    <div className="flex justify-center">{point.icon}</div>
+                    <div className="space-y-2">
+                      <h3 className="font-semibold text-black text-base">{point.title}</h3>
+                      <p className="text-gray-600 text-xs leading-relaxed">{point.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            
-            {/* Features Grid */}
-            <ul className="grid md:grid-cols-2 gap-3 text-sm text-gray-600 mb-8">
-              {features.map((feature, i) => (
-                <motion.li 
-                  key={i}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-2"
-                >
-                  <FiCheck className="text-green-500 mt-0.5 flex-shrink-0" size={16} />
-                  <span>{feature}</span>
-                </motion.li>
-              ))}
-            </ul>
-            
-            {/* CTA Button */}
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors font-medium"
-            >
-              Get Started
-            </motion.button>
+
+            {/* Stacked Cards */}
+            <div className="max-w-lg">
+              {/* Big White Card */}
+              <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-100 relative">
+                {/* Black Card at Top */}
+                <div className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black p-8 rounded-3xl shadow-xl border border-gray-700/20 mb-6">
+                  {/* Fast Speed Lines */}
+                  <div className="absolute inset-0 overflow-hidden">
+                    <motion.div 
+                      animate={{ x: [-100, 400] }}
+                      transition={{ duration: 0.8, repeat: Infinity, ease: "easeOut", delay: 0 }}
+                      className="absolute top-6 left-0 w-20 h-0.5 bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                    />
+                    <motion.div 
+                      animate={{ x: [-100, 400] }}
+                      transition={{ duration: 1, repeat: Infinity, ease: "easeOut", delay: 0.2 }}
+                      className="absolute top-12 left-0 w-16 h-0.5 bg-gradient-to-r from-transparent via-blue-400/30 to-transparent"
+                    />
+                    <motion.div 
+                      animate={{ x: [-100, 400] }}
+                      transition={{ duration: 0.6, repeat: Infinity, ease: "easeOut", delay: 0.4 }}
+                      className="absolute bottom-8 left-0 w-24 h-0.5 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                    />
+                  </div>
+                  
+                  {/* Racing Dots */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    <motion.div 
+                      animate={{ x: [-20, 350], scale: [0.5, 1, 0.5] }}
+                      transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute top-4 left-0 w-2 h-2 bg-white/60 rounded-full"
+                    />
+                    <motion.div 
+                      animate={{ x: [-20, 350], scale: [0.3, 0.8, 0.3] }}
+                      transition={{ duration: 0.9, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+                      className="absolute bottom-4 left-0 w-1.5 h-1.5 bg-blue-400/50 rounded-full"
+                    />
+                  </div>
+
+                  {/* Lightning Emoji Static */}
+                  <div className="absolute top-6 right-4 text-5xl">
+                    ⚡️
+                  </div>
+                  
+                  <div className="relative z-10">
+                    <p className="text-white text-base font-semibold leading-relaxed">Development services for people who move fast.</p>
+                  </div>
+                </div>
+
+                {/* Slots Available with Green Dot in Glass Box */}
+                <div className="inline-flex items-center gap-3 mb-6 bg-white/60 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 shadow-sm">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-xs font-medium text-gray-700">Slots available</span>
+                </div>
+                
+                {/* Main Content */}
+                <div>
+                  <h3 className="text-xl font-semibold text-black mb-4">Hire us today</h3>
+                  <p className="text-base text-gray-600 leading-relaxed">Skip the typical agency markup and work directly with a team of experienced developers.</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </motion.div>
-        
+
+          {/* Right Column - Pricing Card */}
+          <div className="space-y-6 mt-28">
+            <div className="text-gray-600 text-xl font-medium leading-relaxed -mt-28 ml-8">
+              <div>Clear costs, no hidden fees.</div>
+              <div>Select from monthly subscriptions or</div>
+              <div>individual project rates.</div>
+            </div>
+            
+            <div className="bg-white rounded-[28px] p-6 shadow-xl border border-gray-100 max-w-md mx-auto mt-16">
+            <div className="space-y-6">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-2xl font-extrabold text-black">Build Your App</h3>
+                  <p className="text-xs text-gray-500 mt-1">Different apps would have different levels of complexity. Consult us about pricing with your specific requirements.</p>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-400">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14" stroke="#d1d5db" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
+              </div>
+
+              <div className="py-6 border-t border-b border-gray-100">
+                <div className="text-center">
+                  <div className="text-3xl lg:text-4xl font-extrabold mb-2">₹10K-150K INR</div>
+                  <div className="text-xs text-gray-500">Different apps would have different levels of complexity.</div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {features.map((feature, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3"
+                  >
+                    <svg className="w-4 h-4 text-green-500" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    <span className="text-gray-700 text-xs">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div>
+                <button
+                  onClick={() => {
+                    const event = new CustomEvent('openQuoteForm')
+                    window.dispatchEvent(event)
+                  }}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                  className="inline-flex items-center gap-3 bg-black text-white px-5 py-2 rounded-full font-semibold text-sm shadow-lg hover:scale-105 transition-transform duration-300"
+                >
+                  <span className="bg-white text-black rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">$</span>
+                  Get Started
+                </button>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

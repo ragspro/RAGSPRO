@@ -7,10 +7,19 @@ export default function CustomCursor() {
   const [isTextHovering, setIsTextHovering] = useState(false)
   const [isProjectHovering, setIsProjectHovering] = useState(false)
   const [isTestimonialHovering, setIsTestimonialHovering] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const animationRef = useRef()
   const cursorRef = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || 'ontouchstart' in window)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+
     const updateCursor = (e) => {
       cursorRef.current = { x: e.clientX, y: e.clientY }
     }
@@ -79,6 +88,11 @@ export default function CustomCursor() {
       }
     }
   }, [])
+
+  // Don't render cursor on mobile devices
+  if (isMobile) {
+    return null
+  }
 
   return (
     <>
