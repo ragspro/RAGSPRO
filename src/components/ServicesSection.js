@@ -221,7 +221,7 @@ ${formData.message}
                       budget: ''
                     })
                   }}
-                  className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-gray-400 hover:text-black hover:bg-gray-100 rounded-full text-xl font-light transition-all duration-200 z-50 cursor-pointer"
+                  className="absolute top-4 right-4 w-10 h-10 sm:w-8 sm:h-8 flex items-center justify-center text-gray-400 hover:text-black hover:bg-gray-100 rounded-full text-xl font-light transition-all duration-200 z-50 cursor-pointer touch-manipulation"
                 >
                   ×
                 </button>
