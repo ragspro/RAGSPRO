@@ -194,7 +194,7 @@ ${formData.message}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setShowQuoteForm(false)}
-              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-50"
+              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[9998] sm:z-50"
             />
 
             {/* Sidebar Form */}
@@ -203,7 +203,7 @@ ${formData.message}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-0 h-full w-full sm:max-w-xs md:max-w-md bg-white shadow-2xl z-50 overflow-y-auto flex items-center justify-center"
+              className="fixed right-0 top-0 h-full w-full sm:max-w-xs md:max-w-md bg-white shadow-2xl z-[9999] sm:z-50 overflow-y-auto flex items-center justify-center"
             >
               <div className="p-4 sm:p-3 md:p-6 w-full max-w-full sm:max-w-xs md:max-w-sm mx-auto relative">
                 {/* Close Button */}
