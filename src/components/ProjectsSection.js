@@ -54,7 +54,7 @@ export default function ProjectsSection() {
       </div>
 
       {/* View All Button positioned below the actual cards */}
-      <div className="max-w-7xl mx-auto px-8 text-center -mt-[800px] sm:-mt-[850px]">
+      <div className="max-w-7xl mx-auto px-8 text-center -mt-[740px] sm:-mt-[850px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
