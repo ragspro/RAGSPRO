@@ -143,6 +143,7 @@ export default function AllProjects() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index, duration: 0.6 }}
                 className="group cursor-pointer"
+                onClick={() => window.open(project.liveLink, '_blank')}
               >
                 <div className="relative h-48 bg-gray-100 rounded-xl overflow-hidden mb-3">
                   <Image
@@ -152,6 +153,11 @@ export default function AllProjects() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+                  
+                  {/* Click indicator overlay */}
+                  <div className="absolute top-3 right-3 w-8 h-8 bg-black/60 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <FiExternalLink className="w-4 h-4 text-white" />
+                  </div>
                 </div>
                 
                 <div className="space-y-3">
@@ -180,6 +186,7 @@ export default function AllProjects() {
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-black hover:text-[#22c55e] transition-colors text-sm font-medium"
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <FiExternalLink size={14} /> Live
                     </a>
@@ -188,6 +195,7 @@ export default function AllProjects() {
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-black hover:text-[#22c55e] transition-colors text-sm font-medium"
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <FiGithub size={14} /> Code
                     </a>

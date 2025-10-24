@@ -357,13 +357,22 @@ export default function HeroSection() {
             <div
               key={project.id}
               onClick={() => handleProjectClick(project.url)}
-              className="w-full h-24 rounded-lg overflow-hidden shadow-lg cursor-pointer bg-white"
+              className="w-full h-24 rounded-lg overflow-hidden shadow-lg cursor-pointer bg-white relative group active:scale-95 transition-transform duration-200"
             >
               <img
                 src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover"
+                alt={project.name}
+                className="w-full h-full object-cover group-active:scale-110 transition-transform duration-200"
               />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-2">
+                <p className="text-white text-xs font-semibold truncate">{project.name}</p>
+              </div>
+              {/* Click indicator */}
+              <div className="absolute top-2 right-2 w-6 h-6 bg-black/60 rounded-full flex items-center justify-center opacity-0 group-active:opacity-100 transition-opacity duration-200">
+                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </div>
             </div>
           ))}
         </div>
