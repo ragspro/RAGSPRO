@@ -122,12 +122,15 @@ ${formData.message}
           {/* LEFT: Heading */}
           <div className="pt-20 sm:pt-0">
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-normal tracking-tight leading-[1.15]">
+              Startup Development Services
+            </h2>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mt-4">
               <span className="text-gray-400">Services that</span>
               <br />
               <span className="text-black">you need to start</span>
               <br />
               <span className="text-black">your dream SaaS.</span>
-            </h2>
+            </p>
           </div>
 
           {/* RIGHT: Services List */}
@@ -178,7 +181,7 @@ ${formData.message}
           >
             <FaLightbulb className="text-sm sm:text-base flex-shrink-0 hover:text-white" />
             <span className="font-medium text-sm whitespace-nowrap opacity-100 w-auto md:opacity-0 md:w-0 md:group-hover:opacity-100 md:group-hover:w-auto transition-all duration-300 overflow-hidden hover:text-white">
-              Pitch us your idea
+              Discuss your MVP idea
             </span>
           </button>
         </div>

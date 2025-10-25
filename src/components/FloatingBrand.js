@@ -30,6 +30,7 @@ export default function FloatingBrand() {
   const navLinks = [
     { name: 'Services', href: '/#services', isExternal: true },
     { name: 'Pricing', href: '/#pricing', isExternal: true },
+    { name: 'Blog', href: '/blog', isExternal: false },
     { name: 'About', href: '/#team', isExternal: true },
   ]
 
@@ -222,6 +223,15 @@ export default function FloatingBrand() {
                   className="block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50/50 transition-colors w-full text-left"
                 >
                   Pricing
+                </button>
+                <button
+                  onClick={() => {
+                    setIsMenuOpen(false)
+                    handleNavClick('/blog', false)
+                  }}
+                  className="block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50/50 transition-colors w-full text-left"
+                >
+                  Blog
                 </button>
                 <button
                   onClick={() => {

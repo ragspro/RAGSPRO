@@ -171,27 +171,30 @@ export default function TeamSection() {
 
         {/* Testimonials Section */}
         <div id="testimonials" className="mt-56">
-          <h3 className="text-4xl md:text-6xl font-medium mb-36">
+          <h2 className="text-4xl md:text-6xl font-medium mb-36">
+            What Founders Say About RAGSPRO
+          </h2>
+          <p className="text-2xl md:text-3xl text-gray-600 mb-12">
             <span className="text-gray-500">Hear from what the</span><br />
             <span className="text-black">founders have to say.</span>
-          </h3>
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-5xl">
             {[
               {
-                quote: "My business was struggling to get online presence, RAGSPRO's team really helped me establish digital presence and started generating leads consistently.",
+                quote: "RAGSPRO's web development team helped us build our startup app in record time. My business was struggling to get online presence, and they really helped me establish digital presence and started generating leads consistently.",
                 name: "Rajesh Kumar",
                 title: "Founder of Digital Solutions (50K+ followers)",
                 avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
               },
               {
-                quote: "While building my startup, I worked with RAGSPRO's team to build my web application. They delivered super fast, saved me thousands in development costs.",
+                quote: "RAGSPRO's startup app development team helped me build my web application fast. While building my startup, I worked with their team and they delivered super fast, saved me thousands in development costs.",
                 name: "Priya Sharma",
                 title: "CEO of TechStart India",
                 avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face"
               },
               {
-                quote: "RAGSPRO has been an incredible long-term partner for us. When we were considering starting our mobile app, we ultimately chose RAGSPRO for their unbeatable turnaround times and competitive pricing.",
+                quote: "RAGSPRO's AI app development team has been an incredible long-term partner for us. When we were considering starting our mobile app, we ultimately chose RAGSPRO for their unbeatable turnaround times and competitive pricing.",
                 name: "Amit Singh",
                 title: "CEO of StartupHub",
                 avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face"
@@ -256,10 +259,13 @@ export default function TeamSection() {
 
         {/* FAQ Section */}
         <div className="mt-72">
-          <h3 className="text-5xl md:text-6xl font-medium mb-12 ml-16">
+          <h2 className="text-5xl md:text-6xl font-medium mb-12 ml-16">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-2xl md:text-3xl text-gray-600 mb-12 ml-16">
             <span className="text-gray-500">Your questions</span><br />
             <span className="text-black">answered.</span>
-          </h3>
+          </p>
 
           {/* Two Column Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mt-8 sm:mt-12 lg:mt-16">

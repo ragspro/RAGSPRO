@@ -84,12 +84,15 @@ export default function HeroSection() {
             <h1 className="text-[44px] sm:text-[24px] md:text-[32px] lg:text-[48px] xl:text-[68px] font-normal leading-[1.05] tracking-tight mb-3 sm:mb-3 md:mb-6">
               <span className="text-gray-400">We build your</span>
               <br />
-              <span className="text-black">startup in 20 days.</span>
+              <span className="text-black">startup in 20 days</span>
             </h1>
 
             {/* Subheading */}
-            <p className="text-[12px] sm:text-xs md:text-sm lg:text-base text-gray-600 mb-3 sm:mb-4 md:mb-8 mt-4 sm:mt-2">
-              <span className="text-black font-semibold">Yes, it is true.</span> RAGSPRO by Raghav Shah delivers complete startup solutions - web apps, mobile apps, AI integration & business automation in just 20 days.
+            <h2 className="text-[11px] sm:text-[12px] md:text-xs lg:text-sm text-gray-600 mb-3 sm:mb-4 md:mb-8 mt-4 sm:mt-2 font-normal">
+              Launch your SaaS, web & AI apps fast
+            </h2>
+            <p className="text-[11px] sm:text-[12px] md:text-xs lg:text-sm text-gray-600 mb-3 sm:mb-4 md:mb-8 mt-4 sm:mt-2">
+              <span className="text-black font-semibold">Yes, it's true.</span> RAGSPRO helps startups build SaaS, web, and mobile apps with AI integration & business automation — all within 20 days. End-to-end design, development, and automation by Raghav Shah, your trusted startup tech partner.
             </p>
 
             {/* CTA Button with Avatars */}
@@ -126,7 +129,7 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              <span className="text-white">Build your app now</span>
+              <span className="text-white">Get custom SaaS pricing</span>
             </button>
 
             {/* Social Proof - Compact for mobile */}
@@ -263,7 +266,7 @@ export default function HeroSection() {
                   >
                     <Image
                       src={project.image}
-                      alt={project.name}
+                      alt={`${project.name} - SaaS built by RAGSPRO`}
                       fill
                       className="object-cover"
                     />
@@ -347,7 +350,7 @@ export default function HeroSection() {
           position: 'relative'
         }}
       >
-        Latest Projects.
+        Our Latest Projects
       </h2>
 
       {/* Static Project Cards for Mobile */}

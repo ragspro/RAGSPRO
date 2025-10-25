@@ -61,10 +61,11 @@ export default function PricingSection() {
             <div className="-mt-28">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
                 <div className="ml-8">
-                  <div className="text-4xl lg:text-5xl font-medium leading-tight">
+                  <h2 className="text-4xl lg:text-5xl font-medium leading-tight">
+                    Simple Pricing, Clear Costs
+                  </h2>
+                  <div className="text-2xl lg:text-3xl font-medium leading-tight mt-4">
                     <div className="text-gray-500">Simple pricing.</div>
-                  </div>
-                  <div className="text-4xl lg:text-5xl font-medium leading-tight">
                     <div className="relative text-black">
                       Standout SaaS.
                       <div className="absolute inset-0 bg-gray-200 -z-10 rounded-lg transform -rotate-1 opacity-60"></div>
@@ -178,7 +179,7 @@ export default function PricingSection() {
 
               <div className="py-6 border-t border-b border-gray-100">
                 <div className="text-center">
-                  <div className="text-3xl lg:text-4xl font-extrabold mb-2">₹10K-150K INR</div>
+                  <div className="text-3xl lg:text-4xl font-extrabold mb-2">Starting from ₹10K</div>
                   <div className="text-xs text-gray-500">Different apps would have different levels of complexity.</div>
                 </div>
               </div>

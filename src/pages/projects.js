@@ -112,8 +112,10 @@ export default function AllProjects() {
   return (
     <div className="bg-white page-rails">
       <SEOHead 
-        title="All Projects - RAGSPRO | Web Development & AI Solutions"
-        description="Explore my complete portfolio showcasing web development, AI projects, and UI/UX design work."
+        title="Our Startup Apps Portfolio | SaaS & AI Development Projects by RAGSPRO"
+        description="See all startup apps we built - SaaS platforms, AI solutions, and web applications. RAGSPRO's complete portfolio of successful startup development projects."
+        keywords="startup apps portfolio, SaaS development projects, AI app development, web application portfolio, startup development agency, MVP development examples"
+        url="https://ragspro.com/projects"
       />
       <CustomCursor />
       

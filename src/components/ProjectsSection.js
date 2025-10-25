@@ -67,7 +67,7 @@ export default function ProjectsSection() {
           >
             <div className="bg-white/90 backdrop-blur-xl rounded-full px-6 py-3 shadow-xl border border-gray-200/50 flex items-center gap-2 hover:bg-white transition-all">
               <span className="font-medium text-sm text-black whitespace-nowrap">
-                View all projects
+                See all startup apps we built
               </span>
               <FaArrowRight className="text-sm text-black" />
             </div>

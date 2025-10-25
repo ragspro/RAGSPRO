@@ -4,42 +4,5 @@ Allow: /
 # Sitemap
 Sitemap: https://ragspro.com/sitemap.xml
 
-# Crawl-delay for respectful crawling
+# Crawl-delay
 Crawl-delay: 1
-
-# Disallow admin and system areas
-Disallow: /admin/
-Disallow: /_next/
-Disallow: /api/
-Disallow: /.well-known/
-Disallow: /404
-Disallow: /500
-
-# Allow important pages
-Allow: /
-Allow: /projects
-Allow: /meet-founder
-Allow: /our-story
-Allow: /privacy-policy
-Allow: /terms-of-service
-Allow: /documents/Raghav_Shah_Resume.pdf
-
-# Google-specific directives
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-# Bing-specific directives
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-# Social media crawlers
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-# Host directive
-Host: https://ragspro.com

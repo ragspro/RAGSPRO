@@ -59,33 +59,23 @@ export default function Document() {
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "RAGSPRO",
-              "alternateName": "Raghav Shah Digital Agency",
               "url": "https://ragspro.com",
-              "logo": "https://ragspro.com/images/logo.png",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91-8700048490",
-                "contactType": "customer service",
-                "email": "raghav@ragspro.com",
-                "availableLanguage": ["English", "Hindi"]
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Delhi",
-                "addressCountry": "IN"
-              },
+              "logo": "https://ragspro.com/logo.png",
+              "description": "RAGSPRO helps startups build SaaS, web, and mobile apps with AI integration and business automation in just 20 days.",
               "founder": {
                 "@type": "Person",
-                "name": "Raghav Shah",
-                "jobTitle": "Founder & CEO",
-                "email": "raghav@ragspro.com"
+                "name": "Raghav Shah"
               },
               "sameAs": [
                 "https://instagram.com/ragspro.ai",
-                "https://www.linkedin.com/in/bhupederpratap",
-                "https://discord.gg/ragspro"
+                "https://linkedin.com/in/bhupender-pratap",
+                "https://youtube.com/@raghavshahh"
               ],
-              "description": "RAGSPRO is a leading digital agency founded by Raghav Shah, specializing in rapid startup development, web applications, mobile apps, and AI solutions. We build your startup in just 20 days."
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Delhi",
+                "addressCountry": "India"
+              }
             })
           }}
         />

@@ -22,7 +22,7 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
         {/* Main Heading */}
         <div className="mb-4 sm:mb-8 mt-2 sm:mt-8">
-          <h2 className="text-[44px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-normal leading-[1.1] sm:leading-[0.7] md:leading-[0.6] tracking-tight">
+          <h3 className="text-[44px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-normal leading-[1.1] sm:leading-[0.7] md:leading-[0.6] tracking-tight">
             <span className="text-white flex items-baseline relative z-20">
               <span className="text-white font-normal mr-4">Let's </span>
               <span className="inline-block relative overflow-hidden h-[1.2em] min-w-[120px] sm:min-w-[160px] md:min-w-[200px] align-baseline" style={{ transform: 'translateY(10px)' }}>
@@ -63,14 +63,14 @@ export default function Footer() {
             </span>
             <br />
             <span className="text-[#888888] font-normal">your startup together.</span>
-          </h2>
+          </h3>
         </div>
 
         {/* Contact & Partnership Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 md:gap-12 mb-6 sm:mb-10 md:mb-12 mt-3 sm:mt-6">
           {/* Email Section */}
           <div className="text-left">
-            <p className="text-[#888888] text-[11px] mb-3 uppercase tracking-wide font-medium">Email</p>
+            <h3 className="text-[#888888] text-[11px] mb-3 uppercase tracking-wide font-medium">Contact</h3>
             <a
               href="mailto:raghav@ragspro.com"
               className="text-[#FFFFFF] text-[18px] font-normal hover:text-[#888888] transition-colors duration-300 block"
@@ -81,7 +81,7 @@ export default function Footer() {
 
           {/* Partner Section */}
           <div className="text-left md:text-right">
-            <p className="text-[#888888] text-[11px] mb-3 uppercase tracking-wide font-medium">Become a partner</p>
+            <h3 className="text-[#888888] text-[11px] mb-3 uppercase tracking-wide font-medium">Raghav Shah • Delhi, India</h3>
             <button
               onClick={() => {
                 const event = new CustomEvent('openQuoteForm')
