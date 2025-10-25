@@ -28,26 +28,6 @@ export default function AllProjects() {
   const projects = [
     {
       id: 1,
-      title: 'GLOW - AI Photo Transformation',
-      category: ['ai', 'web'],
-      image: '/images/projects/glow.png',
-      description: 'Create a viral AI photo transformation tool for social media users',
-      technologies: ['Stable Diffusion', 'Computer Vision', 'React'],
-      liveLink: 'https://glow.ragspro.com',
-      githubLink: 'https://github.com/ragspro/glow-ai'
-    },
-    {
-      id: 2,
-      title: 'Himshakti E-commerce Website',
-      category: ['web', 'design'],
-      image: '/images/projects/himshakti.jpg',
-      description: 'Complete e-commerce solution for Himshakti brand with product catalog, shopping cart and order management.',
-      technologies: ['Next.js', 'React', 'TailwindCSS', 'PayPal API'],
-      liveLink: 'https://himshakti.ragspro.com',
-      githubLink: 'https://github.com/ragspro/himshakti-ecommerce'
-    },
-    {
-      id: 3,
       title: 'LAWAI - Legal AI Assistant',
       category: ['web', 'ai'],
       image: '/images/projects/lawai.jpg',
@@ -57,7 +37,17 @@ export default function AllProjects() {
       githubLink: 'https://github.com/ragspro/lawai-legal-assistant'
     },
     {
-      id: 4,
+      id: 2,
+      title: 'Main - 3D Portfolio Website',
+      category: ['web', 'design'],
+      image: '/images/projects/main.jpg',
+      description: 'Interactive 3D portfolio website with advanced animations and immersive user experience.',
+      technologies: ['Next.js', 'Three.js', 'React'],
+      liveLink: 'https://main-chi-virid.vercel.app',
+      githubLink: 'https://github.com/ragspro/main'
+    },
+    {
+      id: 3,
       title: 'Maid Service Agency',
       category: ['web', 'design'],
       image: '/images/projects/maid.jpg',
@@ -65,6 +55,46 @@ export default function AllProjects() {
       technologies: ['Next.js', 'React', 'TailwindCSS', 'Stripe API'],
       liveLink: 'https://maid-agency.vercel.app',
       githubLink: 'https://github.com/ragspro/maid-agency'
+    },
+    {
+      id: 4,
+      title: 'GLOW - AI Photo Transformation',
+      category: ['ai', 'web'],
+      image: '/images/projects/glow.png',
+      description: 'Create a viral AI photo transformation tool for social media users',
+      technologies: ['Stable Diffusion', 'Computer Vision', 'React'],
+      liveLink: 'https://glow.ragspro.com',
+      githubLink: 'https://github.com/ragspro/glow-ai'
+    },
+    {
+      id: 5,
+      title: 'SAPD - Coaching Institute Management',
+      category: ['web'],
+      image: '/images/projects/sapd.jpg',
+      description: 'Complete coaching institute management system with progress tracking and student management.',
+      technologies: ['Next.js', 'React', 'Management System'],
+      liveLink: 'https://sapd-eight.vercel.app',
+      githubLink: 'https://github.com/ragspro/SAPD'
+    },
+    {
+      id: 6,
+      title: 'Elito - Premium Shoes E-commerce',
+      category: ['web', 'design'],
+      image: '/images/projects/elito.jpg',
+      description: 'Premium shoes e-commerce platform with modern design and seamless shopping experience.',
+      technologies: ['Next.js', 'E-commerce', 'TailwindCSS'],
+      liveLink: 'https://elito-premium-shoes.vercel.app',
+      githubLink: 'https://github.com/ragspro/Elito-premium-shoes-'
+    },
+    {
+      id: 7,
+      title: 'Himshakti E-commerce Website',
+      category: ['web', 'design'],
+      image: '/images/projects/himshakti.jpg',
+      description: 'Complete e-commerce solution for Himshakti brand with product catalog, shopping cart and order management.',
+      technologies: ['Next.js', 'React', 'TailwindCSS', 'PayPal API'],
+      liveLink: 'https://himshakti.ragspro.com',
+      githubLink: 'https://github.com/ragspro/himshakti-ecommerce'
     }
   ]
   

@@ -33,6 +33,8 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+.amazonq/
+.qodo/
 *.swp
 *.swo
 
