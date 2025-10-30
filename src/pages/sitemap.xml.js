@@ -14,6 +14,12 @@ function generateSiteMap() {
        <priority>0.8</priority>
      </url>
      <url>
+       <loc>https://ragspro.com/our-story</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
        <loc>https://ragspro.com/blog</loc>
        <lastmod>${new Date().toISOString()}</lastmod>
        <changefreq>weekly</changefreq>

@@ -163,6 +163,18 @@ export default function Footer() {
           {/* Legal Links */}
           <div className="flex justify-center gap-4 sm:gap-6">
             <a
+              href="/our-story"
+              className="text-[#888888] text-[13px] hover:text-white transition-colors duration-300"
+            >
+              Our Story
+            </a>
+            <a
+              href="/blog"
+              className="text-[#888888] text-[13px] hover:text-white transition-colors duration-300"
+            >
+              Blog
+            </a>
+            <a
               href="/privacy-policy"
               className="text-[#888888] text-[13px] hover:text-white transition-colors duration-300"
             >

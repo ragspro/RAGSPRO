@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import FAQItem from './FAQItem'
+import RaghavAvatar from './RaghavAvatar'
 
 const teamMembers = [
   {
@@ -73,11 +74,11 @@ export default function TeamSection() {
           <div className="text-left">
             {/* Avatar Centered */}
             <div className="flex justify-center mb-12 mt-8">
-              <div className="w-56 h-56 bg-black rounded-3xl flex items-center justify-center">
-                <span className="text-white text-7xl font-bold">
-                  {teamMembers[0].name.split(' ').map(n => n[0]).join('')}
-                </span>
-              </div>
+              <RaghavAvatar
+                size="md"
+                variant="square-xl"
+                priority={true}
+              />
             </div>
             
             {/* Info */}
@@ -303,9 +304,11 @@ export default function TeamSection() {
                 <div className="bg-white p-4 sm:p-6 lg:p-10 rounded-lg sm:rounded-xl border border-gray-200 shadow-lg min-h-[280px] sm:min-h-[320px] max-w-full lg:max-w-sm">
                   {/* Avatar */}
                   <div className="mb-4">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-black to-gray-700 flex items-center justify-center text-white text-lg sm:text-xl font-bold">
-                      RS
-                    </div>
+                    <RaghavAvatar
+                      size="sm"
+                      variant="circle-gradient"
+                      priority={false}
+                    />
                   </div>
 
                   {/* Content */}

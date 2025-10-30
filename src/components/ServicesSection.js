@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaMobileAlt, FaLaptopCode, FaFileAlt, FaShieldAlt, FaPaintBrush, FaCube, FaPalette, FaWhatsapp, FaLightbulb } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
+import RaghavAvatar from './RaghavAvatar'
 
 const services = [
   { title: "Mobile Apps", icon: FaMobileAlt },
@@ -241,9 +242,11 @@ ${formData.message}
 
                 {/* Profile */}
                 <div className="flex items-center gap-2 mb-4 p-3 bg-white/80 backdrop-blur-2xl rounded-xl border border-white/40 shadow-lg mx-auto w-fit">
-                  <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white font-bold text-xs">
-                    RS
-                  </div>
+                  <RaghavAvatar
+                    size="xs"
+                    variant="square"
+                    priority={true}
+                  />
                   <div className="flex-1">
                     <p className="font-bold text-black text-xs">Raghav Shah</p>
                     <p className="text-gray-600 text-[10px]">CEO, RAGSPRO</p>

@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import { useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import Head from 'next/head'
 import Layout from '../components/Layout'
 import MobilePerformanceOptimizer from '../components/MobilePerformanceOptimizer'
 import CustomCircleCursor from '../components/CustomCircleCursor'
@@ -37,14 +38,19 @@ export default function App({ Component, pageProps, router }) {
   }, []);
 
   return (
-    <SmoothScroll>
-      <AnimatePresence mode="wait">
-        <CustomCircleCursor />
-        <MobilePerformanceOptimizer />
-        <Layout>
-          <Component {...pageProps} key={router.route} />
-        </Layout>
-      </AnimatePresence>
-    </SmoothScroll>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover" />
+      </Head>
+      <SmoothScroll>
+        <AnimatePresence mode="wait">
+          <CustomCircleCursor />
+          <MobilePerformanceOptimizer />
+          <Layout>
+            <Component {...pageProps} key={router.route} />
+          </Layout>
+        </AnimatePresence>
+      </SmoothScroll>
+    </>
   )
 }

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import SEOHead from '../components/SEOHead'
+import RaghavAvatar from '../components/RaghavAvatar'
 import { FiGithub, FiLinkedin, FiTwitter, FiInstagram, FiMail, FiMapPin, FiAward, FiCode, FiUsers, FiTrendingUp } from 'react-icons/fi'
 
 export default function MeetFounder() {
@@ -72,8 +73,12 @@ export default function MeetFounder() {
                 className="relative"
               >
                 <div className="glass-card p-8 rounded-2xl">
-                  <div className="w-64 h-64 mx-auto mb-6 rounded-full bg-gradient-to-br from-accent/20 to-purple-600/20 flex items-center justify-center border-2 border-accent/30">
-                    <div className="text-6xl font-bold text-accent">RS</div>
+                  <div className="mx-auto mb-6 flex justify-center">
+                    <RaghavAvatar
+                      size="lg"
+                      variant="circle-accent"
+                      priority={true}
+                    />
                   </div>
                   <div className="text-center">
                     <h1 className="text-2xl font-bold text-white mb-2">Raghav Shah</h1>

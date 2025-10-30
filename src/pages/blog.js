@@ -1,5 +1,5 @@
 import SEOHead from '../components/SEOHead'
-import Layout from '../components/Layout'
+import { useRouter } from 'next/router'
 
 const blogPosts = [
   {
@@ -41,6 +41,7 @@ const blogPosts = [
 ]
 
 export default function Blog() {
+  const router = useRouter()
   return (
     <>
       <SEOHead 
@@ -84,13 +85,16 @@ export default function Blog() {
                   
                   <div className="flex items-center justify-between">
                     <span className="text-gray-500 text-sm">
-                      {new Date(post.date).toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric' 
+                      {new Date(post.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
                       })}
                     </span>
-                    <button className="text-black font-medium text-sm hover:underline">
+                    <button
+                      onClick={() => router.push(`/blog/${post.slug}`)}
+                      className="text-black font-medium text-sm hover:underline cursor-pointer"
+                    >
                       Read More →
                     </button>
                   </div>
