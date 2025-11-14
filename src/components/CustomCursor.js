@@ -96,13 +96,13 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Normal cursor ko upar rakhne ke liye CSS */}
+      {/* Hide default cursor and show custom cursor */}
       <style jsx global>{`
         * {
-          cursor: auto !important;
+          cursor: none !important;
         }
         body {
-          cursor: auto !important;
+          cursor: none !important;
         }
       `}</style>
       
