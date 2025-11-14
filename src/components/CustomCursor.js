@@ -45,7 +45,7 @@ export default function CustomCursor() {
         setIsProjectHovering(false)
         setIsHovering(false)
         setIsTextHovering(false)
-      } else if (e.target.closest('.project-card') || e.target.dataset.project) {
+      } else if (e.target.closest('.project-card') || e.target.dataset.project || e.target.closest('.group')) {
         setIsProjectHovering(true)
         setIsHovering(false)
         setIsTextHovering(false)
@@ -66,7 +66,7 @@ export default function CustomCursor() {
     const handleMouseLeave = (e) => {
       if (e.target.closest('.testimonial-area') || e.target.closest('[data-testimonial]')) {
         setIsTestimonialHovering(false)
-      } else if (e.target.closest('.project-card') || e.target.dataset.project) {
+      } else if (e.target.closest('.project-card') || e.target.dataset.project || e.target.closest('.group')) {
         setIsProjectHovering(false)
       } else if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A' || e.target.closest('button') || e.target.closest('a')) {
         setIsHovering(false)
