@@ -252,6 +252,16 @@ export default function AllProjects() {
 
       {/* Bottom Blur Overlay - Same as Landing Page */}
       <div className="fixed bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-white/40 via-white/10 to-transparent backdrop-blur-[2px] pointer-events-none z-30 rounded-t-[1.25rem]" />
+      
+      {/* X-ray cursor dot effect - Same as home page */}
+      <style jsx global>{`
+        * {
+          cursor: none !important;
+        }
+        body {
+          cursor: none !important;
+        }
+      `}</style>
     </div>
   )
 }
