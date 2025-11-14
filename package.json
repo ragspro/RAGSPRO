@@ -17,6 +17,7 @@
   ],
   "author": "Raghav Shah <raghav@ragspro.com>",
   "homepage": "https://ragspro.com",
+  "website": "https://ragspro.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/ragspro/ragspro-portfolio.git"
