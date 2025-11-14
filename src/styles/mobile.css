@@ -1,0 +1,211 @@
+/* Mobile Responsive Styles for Premium Experience */
+
+/* Prevent zoom on input focus */
+input, textarea, select {
+  font-size: 16px !important;
+}
+
+/* Smooth scrolling for all devices */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Touch optimization */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* Mobile viewport fixes */
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile-first responsive containers */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+/* Prevent text overflow on all mobile devices */
+@media (max-width: 767px) {
+  * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .text-gradient {
+    display: inline-block;
+    max-width: 100%;
+  }
+  
+  /* Ensure proper spacing on mobile */
+  .hero-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  /* Fix button layout on small screens */
+  .flex-col.xs\:flex-row {
+    width: 100%;
+  }
+  
+  .flex-col.xs\:flex-row button {
+    width: 100%;
+    text-align: center;
+  }
+  
+  @media (min-width: 375px) {
+    .flex-col.xs\:flex-row {
+      flex-direction: row;
+    }
+    
+    .flex-col.xs\:flex-row button {
+      width: auto;
+      flex: 1;
+    }
+  }
+}
+
+/* Touch-friendly buttons */
+button, .btn {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+  }
+}
+
+/* Responsive text scaling */
+@media (max-width: 480px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+}
+
+/* iPad specific optimizations */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-section {
+    min-height: 80vh;
+  }
+  
+  .three-canvas {
+    height: 60vh;
+  }
+}
+
+/* Safari iOS fixes */
+@supports (-webkit-touch-callout: none) {
+  .hero-section {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    padding-top: calc(env(safe-area-inset-top) + 4rem);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 2rem);
+  }
+  
+  .loader-container {
+    height: 100vh;
+    height: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* iPhone specific optimizations */
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 100vh;
+    padding: 4rem 1rem 2rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .three-canvas {
+    height: 35vh;
+    max-height: 300px;
+  }
+  
+  /* Fix text positioning */
+  .hero-content {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+    word-break: break-word;
+    margin-bottom: 1rem !important;
+  }
+  
+  h2 {
+    font-size: 1.1rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Center loader perfectly */
+  .loader-container {
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loader-title {
+    font-size: 2rem !important;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Safe area for notched devices */
+@supports (padding: max(0px)) {
+  .safe-area-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}

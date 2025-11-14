@@ -1,0 +1,52 @@
+{
+  "name": "ragspro-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RAGSPRO - Raghav Shah's digital agency website. We build startups in 20 days - web apps, mobile apps, AI solutions & business consulting in Delhi, India.",
+  "keywords": [
+    "ragspro",
+    "raghav shah",
+    "digital agency",
+    "startup development",
+    "web development",
+    "mobile app development",
+    "AI solutions",
+    "delhi",
+    "india",
+    "20 days startup"
+  ],
+  "author": "Raghav Shah <raghav@ragspro.com>",
+  "homepage": "https://ragspro.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ragspro/ragspro-portfolio.git"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@splinetool/react-spline": "^4.1.0",
+    "@studio-freight/lenis": "^1.0.42",
+    "framer-motion": "^12.23.24",
+    "gsap": "^3.12.2",
+    "lenis": "^1.3.11",
+    "lottie-react": "^2.4.0",
+    "next": "^14.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
+    "react-intersection-observer": "^9.5.2",
+    "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.53.0",
+    "eslint-config-next": "^14.0.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5"
+  }
+}
